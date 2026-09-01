@@ -3,16 +3,17 @@ import Layout from '../layouts/Layout.astro';
 import { Hero } from '../components/sections/Hero';
 import { LogoTicker } from '../components/sections/LogoTicker';
 import { Services } from '../components/sections/Services';
+import { Testimonials } from '../components/sections/Testimonials';
 import { ContactForm } from '../components/sections/ContactForm';
 ---
 
 <Layout>
   <Hero />
-  
-  {/* The ticker is static HTML, no client:load needed */}
   <LogoTicker />
-  
   <Services />
+  
+  {/* Rendered as static HTML */}
+  <Testimonials />
   
   <ContactForm client:load />
 </Layout>
