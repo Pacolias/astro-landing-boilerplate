@@ -4,47 +4,50 @@ import { Hero } from '../components/sections/Hero';
 import { LogoTicker } from '../components/sections/LogoTicker';
 import { About } from '../components/sections/About';
 import { Services } from '../components/sections/Services';
-import { Pricing } from '../components/sections/Pricing';
+import { Benefits } from '../components/sections/Benefits';
 import { Testimonials } from '../components/sections/Testimonials';
-import { FAQ } from '../components/sections/FAQ';
+import { Pricing } from '../components/sections/Pricing';
 import { Location } from '../components/sections/Location';
+import { FAQ } from '../components/sections/FAQ';
 import { ContactForm } from '../components/sections/ContactForm';
 import { ScrollReveal } from '../components/ui/ScrollReveal';
 ---
 
 <Layout>
   <Hero client:load />
-  <!-- Uncomment the line below to display the logo ticker separately wrt the hero -->
   <!-- <LogoTicker /> -->
-  
-  <ScrollReveal client:load>
+
+  <ScrollReveal client:visible>
     <About />
   </ScrollReveal>
-  
-  <!-- Añadimos el id="services" aquí -->
+
   <section id="services">
-    <ScrollReveal client:load>
+    <ScrollReveal client:visible>
       <Services />
     </ScrollReveal>
   </section>
 
-  <ScrollReveal client:load>
+  <ScrollReveal client:visible>
+    <Benefits />
+  </ScrollReveal>
+
+  <ScrollReveal client:visible>
+    <Testimonials client:visible />
+  </ScrollReveal>
+
+  <ScrollReveal client:visible>
     <Pricing />
   </ScrollReveal>
-  
-  <ScrollReveal client:load>
-    <Testimonials client:load />
-  </ScrollReveal>
-  
-  <ScrollReveal client:load>
-    <FAQ client:load />
-  </ScrollReveal>
-  
-  <ScrollReveal client:load>
+
+  <ScrollReveal client:visible>
     <Location />
   </ScrollReveal>
-  
-  <ScrollReveal client:load>
-    <ContactForm client:load />
+
+  <ScrollReveal client:visible>
+    <FAQ client:visible />
+  </ScrollReveal>
+
+  <ScrollReveal client:visible>
+    <ContactForm client:visible />
   </ScrollReveal>
 </Layout>
