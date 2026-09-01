@@ -68,9 +68,9 @@ export const Navbar: React.FC = () => {
             <button
               onClick={toggleTheme}
               aria-label="Toggle theme"
-              className="p-2 rounded-lg bg-slate-200 dark:bg-slate-900 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
+              className="w-10 h-10 flex items-center justify-center rounded-full bg-slate-200/70 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:scale-105 transition-all duration-200 shadow-sm shrink-0"
             >
-              {isDark ? <Lucide.Sun className="w-5 h-5" /> : <Lucide.Moon className="w-5 h-5" />}
+              {isDark ? <Lucide.SunMedium className="w-4 h-4" /> : <Lucide.MoonStar className="w-4 h-4" />}
             </button>
           </nav>
 
@@ -78,9 +78,9 @@ export const Navbar: React.FC = () => {
             <button
               onClick={toggleTheme}
               aria-label="Toggle theme"
-              className="p-2 rounded-lg bg-slate-200 dark:bg-slate-900 text-slate-600 dark:text-slate-300"
+              className="w-10 h-10 flex items-center justify-center rounded-full bg-slate-200/70 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:scale-105 transition-all duration-200 shadow-sm shrink-0"
             >
-              {isDark ? <Lucide.Sun className="w-5 h-5" /> : <Lucide.Moon className="w-5 h-5" />}
+              {isDark ? <Lucide.SunMedium className="w-4 h-4" /> : <Lucide.MoonStar className="w-4 h-4" />}
             </button>
 
             <button 
