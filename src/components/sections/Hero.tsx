@@ -55,12 +55,12 @@ export const Hero: React.FC = () => {
         </p>
         
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-          <button 
-            onClick={() => scrollToSection('contact')}
-            className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs uppercase tracking-widest shadow-lg shadow-blue-500/25 transition-all duration-200"
+          <a 
+            href="/booking"
+            className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs uppercase tracking-widest shadow-lg shadow-blue-500/25 transition-all duration-200 text-center"
           >
             Booking
-          </button>
+          </a>
           
           <button 
             onClick={() => scrollToSection('services')}
