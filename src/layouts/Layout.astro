@@ -1,4 +1,5 @@
 ---
+import { ClientRouter } from 'astro:transitions';
 import '../styles/global.css';
 import { SITE_CONFIG } from '../config.ts';
 import { Navbar } from '../components/layout/Navbar';
@@ -25,21 +26,30 @@ const {
     <meta name="author" content={SITE_CONFIG.clientName} />
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <title>{title}</title>
+    <ClientRouter />
     <script is:inline>
-      const theme = (() => {
-        if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-          return localStorage.getItem('theme');
+      const applyTheme = () => {
+        const theme = (() => {
+          if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+            return localStorage.getItem('theme');
+          }
+          if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            return 'dark';
+          }
+          return 'light';
+        })();
+        if (theme === 'dark') {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
         }
-        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-          return 'dark';
-        }
-        return 'light';
-      })();
-      if (theme === 'dark') {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-      }
+      };
+
+      // Aplicar al cargar la página inicialmente
+      applyTheme();
+
+      // Volver a aplicar el tema cada vez que Astro cambie de página mediante View Transitions
+      document.addEventListener('astro:after-swap', applyTheme);
     </script>
   </head>
   <body class="min-h-screen flex flex-col bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans antialiased selection:bg-blue-200">
