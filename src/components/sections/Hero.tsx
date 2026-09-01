@@ -1,5 +1,4 @@
 import React from 'react';
-import { Button } from '../ui/Button';
 
 export const Hero: React.FC = () => {
   const scrollToSection = (id: string) => {
@@ -22,22 +21,19 @@ export const Hero: React.FC = () => {
         </p>
         
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-          <Button 
-            variant="primary" 
-            size="lg" 
+          <button 
             onClick={() => scrollToSection('contact')}
-            className="w-full sm:w-auto"
+            className="w-full sm:w-auto px-8.py-4 px-8 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-medium shadow-lg shadow-blue-500/25 transition-all duration-300"
           >
             Get Started Today
-          </Button>
-          <Button 
-            variant="outline" 
-            size="lg" 
+          </button>
+          
+          <button 
             onClick={() => scrollToSection('services')}
-            className="w-full sm:w-auto"
+            className="w-full sm:w-auto px-8 py-3.5 rounded-xl border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-200 font-medium hover:bg-slate-50 dark:hover:bg-slate-800 transition-all duration-300"
           >
             Explore Services
-          </Button>
+          </button>
         </div>
       </div>
     </section>
