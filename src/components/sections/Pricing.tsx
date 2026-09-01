@@ -113,9 +113,9 @@ export const Pricing: React.FC = () => {
               
               <a 
                 href="#contact" 
-                className={`block w-full py-3 px-4 rounded-lg font-semibold text-center transition-all duration-300 ${
+                className={`block w-full py-3.5 px-6 rounded-full font-bold text-xs uppercase tracking-widest text-center transition-all duration-200 shadow-sm ${
                   plan.isPopular
-                    ? 'bg-blue-600 hover:bg-blue-500 text-white'
+                    ? 'bg-blue-600 hover:bg-blue-500 text-white shadow-blue-500/25'
                     : 'bg-slate-900 dark:bg-slate-800 text-white hover:bg-slate-800 dark:hover:bg-slate-700'
                 }`}
               >
