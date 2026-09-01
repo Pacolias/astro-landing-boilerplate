@@ -1,5 +1,7 @@
 ---
 import { SITE_CONFIG } from '../config';
+import { Navbar } from '../components/layout/Navbar';
+import { Footer } from '../components/layout/Footer';
 
 interface Props {
   title?: string;
@@ -20,10 +22,13 @@ const {
     <meta name="description" content={description} />
     <meta name="author" content={SITE_CONFIG.clientName} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    
     <title>{title}</title>
   </head>
-  <body class="min-h-screen bg-slate-50 text-slate-900 font-sans antialiased selection:bg-blue-200">
-    <slot />
+  <body class="min-h-screen flex flex-col bg-slate-50 text-slate-900 font-sans antialiased selection:bg-blue-200">
+    <Navbar client:load />
+    <main class="flex-grow">
+      <slot />
+    </main>
+    <Footer />
   </body>
 </html>
