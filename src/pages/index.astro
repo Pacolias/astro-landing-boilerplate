@@ -6,16 +6,27 @@ import { Services } from '../components/sections/Services';
 import { Testimonials } from '../components/sections/Testimonials';
 import { FAQ } from '../components/sections/FAQ';
 import { ContactForm } from '../components/sections/ContactForm';
+import { ScrollReveal } from '../components/ui/ScrollReveal';
 ---
 
 <Layout>
+  {/* The Hero usually shouldn't have a scroll reveal since it's above the fold */}
   <Hero />
   <LogoTicker />
-  <Services />
-  <Testimonials />
   
-  {/* Native HTML details/summary requires zero JS hydration */}
-  <FAQ />
+  <ScrollReveal client:load>
+    <Services />
+  </ScrollReveal>
   
-  <ContactForm client:load />
+  <ScrollReveal client:load>
+    <Testimonials />
+  </ScrollReveal>
+  
+  <ScrollReveal client:load>
+    <FAQ />
+  </ScrollReveal>
+  
+  <ScrollReveal client:load>
+    <ContactForm client:load />
+  </ScrollReveal>
 </Layout>
