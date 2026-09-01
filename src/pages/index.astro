@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { Hero } from '../components/sections/Hero';
+import { LogoTicker } from '../components/sections/LogoTicker';
 import { Services } from '../components/sections/Services';
 import { ContactForm } from '../components/sections/ContactForm';
 ---
@@ -8,8 +9,10 @@ import { ContactForm } from '../components/sections/ContactForm';
 <Layout>
   <Hero />
   
+  {/* The ticker is static HTML, no client:load needed */}
+  <LogoTicker />
+  
   <Services />
   
-  <!-- client:load ensures any future React state (like form validation) hydrates properly on the client -->
   <ContactForm client:load />
 </Layout>
