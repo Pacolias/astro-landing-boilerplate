@@ -14,6 +14,7 @@ export interface SiteConfig {
   clientName: string;
   siteName: string;
   siteDescription: string;
+  showLogo: boolean;
   contactEmail: string;
   contactPhone?: string;
   address?: string;
@@ -25,6 +26,7 @@ export const SITE_CONFIG: SiteConfig = {
   clientName: 'Generic Client Name',
   siteName: 'Generic Business Project',
   siteDescription: 'A brief, generic description for SEO purposes. This should summarize the main value proposition of the business or project.',
+  showLogo: true,
   contactEmail: 'contact@example.com',
   contactPhone: '+1 234 567 8900',
   address: '123 Generic Street, City, Country',

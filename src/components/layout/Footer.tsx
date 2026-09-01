@@ -15,7 +15,18 @@ export const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <h3 className="text-white font-bold text-lg mb-4">{SITE_CONFIG.siteName}</h3>
+            {/* Brand section updated with Logo */}
+            <div className="flex items-center gap-2 mb-4">
+              {SITE_CONFIG.showLogo && (
+                <div className="w-8 h-8 bg-white text-slate-900 rounded-lg flex items-center justify-center">
+                  <Lucide.Hexagon className="w-5 h-5" />
+                </div>
+              )}
+              <h3 className="text-white font-bold text-lg tracking-tight">
+                {SITE_CONFIG.siteName}
+              </h3>
+            </div>
+            
             <p className="text-sm leading-relaxed max-w-xs">
               {SITE_CONFIG.siteDescription}
             </p>

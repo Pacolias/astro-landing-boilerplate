@@ -19,9 +19,18 @@ export const Navbar: React.FC = () => {
     <header className="sticky top-0 z-50 w-full bg-white border-b border-slate-100 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
-          <div className="flex-shrink-0 font-bold text-xl tracking-tight text-slate-900">
-            {SITE_CONFIG.siteName}
-          </div>
+          
+          {/* Brand section updated with Logo */}
+          <a href="/" className="flex items-center gap-2 flex-shrink-0 group focus:outline-none">
+            {SITE_CONFIG.showLogo && (
+              <div className="w-8 h-8 bg-slate-900 text-white rounded-lg flex items-center justify-center group-hover:bg-slate-800 transition-colors">
+                <Lucide.Hexagon className="w-5 h-5" />
+              </div>
+            )}
+            <span className="font-bold text-xl tracking-tight text-slate-900 group-hover:text-slate-700 transition-colors">
+              {SITE_CONFIG.siteName}
+            </span>
+          </a>
           
           <nav className="hidden md:flex space-x-6 lg:space-x-8">
             {navLinks.map((link) => (
