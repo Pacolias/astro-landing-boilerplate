@@ -25,10 +25,9 @@ export const Footer: React.FC = () => {
   return (
     <footer className="bg-slate-100 dark:bg-slate-950 text-slate-600 dark:text-slate-300 py-12 border-t border-slate-200 dark:border-slate-900 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div>
-            {/* Brand section updated with Logo */}
-            <div className="flex items-center gap-2 mb-4">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+          <div className="flex flex-col items-center">
+            <div className="flex items-center gap-2 mb-4 justify-center">
               {SITE_CONFIG.showLogo && (
                 <div className="w-8 h-8 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-lg flex items-center justify-center transition-colors">
                   <Lucide.Hexagon className="w-5 h-5" />
@@ -39,21 +38,21 @@ export const Footer: React.FC = () => {
               </h3>
             </div>
             
-            <p className="text-sm leading-relaxed max-w-xs text-slate-500 dark:text-slate-400">
+            <p className="text-sm leading-relaxed max-w-xs text-slate-500 dark:text-slate-400 text-center">
               {SITE_CONFIG.siteDescription}
             </p>
           </div>
-          <div>
+          <div className="flex flex-col items-center">
             <h4 className="text-slate-900 dark:text-white font-semibold mb-4">Contact</h4>
-            <ul className="space-y-2 text-sm text-slate-500 dark:text-slate-400">
+            <ul className="space-y-2 text-sm text-slate-500 dark:text-slate-400 text-center">
               <li>{SITE_CONFIG.contactEmail}</li>
               {SITE_CONFIG.contactPhone && <li>{SITE_CONFIG.contactPhone}</li>}
               {SITE_CONFIG.address && <li>{SITE_CONFIG.address}</li>}
             </ul>
           </div>
-          <div>
+          <div className="flex flex-col items-center">
             <h4 className="text-slate-900 dark:text-white font-semibold mb-4">Social</h4>
-            <div className="flex space-x-4">
+            <div className="flex justify-center space-x-4">
               {SITE_CONFIG.socials.map((social) => {
                 const IconComponent = ICON_MAP[social.icon];
                 
@@ -71,6 +70,26 @@ export const Footer: React.FC = () => {
                 );
               })}
             </div>
+          </div>
+          <div className="flex flex-col items-center">
+            <h4 className="text-slate-900 dark:text-white font-semibold mb-4">Legal</h4>
+            <ul className="space-y-2 text-sm text-slate-500 dark:text-slate-400 text-center">
+              <li>
+                <a href="/terms" className="hover:text-slate-900 dark:hover:text-white transition-colors">
+                  Terms
+                </a>
+              </li>
+              <li>
+                <a href="/privacy" className="hover:text-slate-900 dark:hover:text-white transition-colors">
+                  Privacy
+                </a>
+              </li>
+              <li>
+                <a href="/cookies" className="hover:text-slate-900 dark:hover:text-white transition-colors">
+                  Cookies
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
         <div className="mt-12 pt-8 border-t border-slate-200 dark:border-slate-900 text-sm text-center text-slate-500 dark:text-slate-400">
