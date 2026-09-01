@@ -1,6 +1,5 @@
 import React from 'react';
 import { SectionHeading } from '../ui/SectionHeading';
-import * as Lucide from 'lucide-react';
 
 export const About: React.FC = () => {
   return (
@@ -28,10 +27,14 @@ export const About: React.FC = () => {
             </div>
           </div>
           <div className="relative">
-            <div className="aspect-square rounded-2xl bg-slate-50 dark:bg-slate-800 overflow-hidden flex items-center justify-center border border-slate-200 dark:border-slate-700 shadow-sm">
-              <Lucide.Image className="w-24 h-24 text-slate-300 dark:text-slate-600" />
+            <div className="aspect-square rounded-2xl overflow-hidden shadow-xl border border-slate-200 dark:border-slate-700">
+              <img 
+                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80" 
+                alt="Team collaboration" 
+                className="w-full h-full object-cover"
+              />
             </div>
-            <div className="absolute -bottom-6 -left-6 w-48 h-48 bg-slate-100 dark:bg-slate-800/50 rounded-2xl border border-slate-200 dark:border-slate-700 -z-10"></div>
+            <div className="absolute -bottom-6 -left-6 w-48 h-48 bg-blue-500/10 rounded-2xl border border-blue-500/20 -z-10"></div>
           </div>
         </div>
       </div>
