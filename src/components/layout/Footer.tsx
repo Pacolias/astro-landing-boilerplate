@@ -1,5 +1,11 @@
 import React from 'react';
-import { SITE_CONFIG } from '../../config';
+import { SITE_CONFIG } from '../../config.ts';
+import * as Lucide from 'lucide-react';
+
+const ICON_MAP: Record<string, Lucide.LucideIcon> = {
+  instagram: Lucide.Instagram,
+  whatsapp: Lucide.MessageCircle
+};
 
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -24,20 +30,24 @@ export const Footer: React.FC = () => {
           </div>
           <div>
             <h4 className="text-white font-semibold mb-4">Social</h4>
-            <ul className="space-y-2 text-sm">
-              {SITE_CONFIG.socials.map((social) => (
-                <li key={social.platform}>
+            <div className="flex space-x-4">
+              {SITE_CONFIG.socials.map((social) => {
+                const IconComponent = ICON_MAP[social.icon];
+                
+                return (
                   <a 
+                    key={social.platform}
                     href={social.url} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="hover:text-white transition-colors"
+                    className="text-slate-400 hover:text-white transition-colors"
+                    aria-label={social.platform}
                   >
-                    {social.platform}
+                    {IconComponent ? <IconComponent className="h-6 w-6" /> : <span>{social.platform}</span>}
                   </a>
-                </li>
-              ))}
-            </ul>
+                );
+              })}
+            </div>
           </div>
         </div>
         <div className="mt-12 pt-8 border-t border-slate-800 text-sm text-center">
