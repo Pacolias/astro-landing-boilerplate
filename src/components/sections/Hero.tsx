@@ -25,10 +25,10 @@ export const Hero: React.FC = () => {
       return (
         <div
           key={`${copy}-${index}`}
-          className="flex items-center gap-3.5 px-12 shrink-0 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors cursor-default select-none"
+          className="flex items-center gap-4 px-12 shrink-0 text-slate-500 dark:text-slate-400 cursor-default select-none"
         >
-          <Icon className="w-8 h-8 shrink-0" />
-          <span className="text-xl font-bold tracking-wider font-mono whitespace-nowrap">
+          <Icon className="w-10 h-10 shrink-0" />
+          <span className="text-2xl font-bold tracking-wider font-mono whitespace-nowrap">
             {logo.name}
           </span>
         </div>
