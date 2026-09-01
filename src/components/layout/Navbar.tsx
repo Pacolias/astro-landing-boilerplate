@@ -27,7 +27,8 @@ export const Navbar: React.FC = () => {
     { name: 'ABOUT', href: '/#about' },
     { name: 'SERVICES', href: '/#services' },
     { name: 'PRICING', href: '/#pricing' },
-    { name: 'CONTACT', href: '/#contact' },
+    { name: 'REVIEWS', href: '/#testimonials' },
+    { name: 'LOCATION', href: '/#location' },
   ];
 
   return (
@@ -58,10 +59,10 @@ export const Navbar: React.FC = () => {
             ))}
 
             <a
-              href="/booking"
+              href={SITE_CONFIG.cta.href}
               className="font-bold uppercase text-xs bg-blue-600 duration-200 hover:bg-blue-500 hover:scale-105 px-4 py-2 rounded-full text-white text-center tracking-widest transition-all inline-block shadow-sm"
             >
-              Booking
+              {SITE_CONFIG.cta.text}
             </a>
 
             <button
@@ -107,11 +108,11 @@ export const Navbar: React.FC = () => {
               </a>
             ))}
             <a
-              href="/booking"
+              href={SITE_CONFIG.cta.href}
               onClick={() => setIsOpen(false)}
               className="block font-bold uppercase text-xs bg-blue-600 duration-200 hover:bg-blue-500 hover:scale-[1.02] px-4 py-2.5 rounded-full text-white text-center tracking-widest transition-all mt-4 mx-2"
             >
-              Booking
+              {SITE_CONFIG.cta.text}
             </a>
           </div>
         </div>

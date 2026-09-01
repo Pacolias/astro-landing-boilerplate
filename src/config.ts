@@ -18,6 +18,7 @@ export interface SiteConfig {
   contactEmail: string;
   contactPhone?: string;
   address?: string;
+  cta?: { text: string; href: string };
   socials: SocialMedia[];
   theme: ThemeColors;
 }
@@ -30,6 +31,10 @@ export const SITE_CONFIG: SiteConfig = {
   contactEmail: 'contact@example.com',
   contactPhone: '+1 234 567 8900',
   address: '123 Generic Street, City, Country',
+  cta: {
+    text: "Booking",
+    href: "/booking",
+  },
   socials: [
     {
       platform: 'X',

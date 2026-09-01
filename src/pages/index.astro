@@ -17,37 +17,47 @@ import { ScrollReveal } from '../components/ui/ScrollReveal';
   <Hero client:load />
   <!-- <LogoTicker /> -->
 
-  <ScrollReveal client:visible>
-    <About />
-  </ScrollReveal>
+  <div id="about">
+    <ScrollReveal client:visible>
+      <About />
+    </ScrollReveal>
+  </div>
 
-  <section id="services">
+  <div id="services">
     <ScrollReveal client:visible>
       <Services />
     </ScrollReveal>
-  </section>
+  </div>
 
   <ScrollReveal client:visible>
     <Benefits />
   </ScrollReveal>
 
-  <ScrollReveal client:visible>
-    <Testimonials client:visible />
-  </ScrollReveal>
+  <div id="testimonials">
+    <ScrollReveal client:visible>
+      <Testimonials client:visible />
+    </ScrollReveal>
+  </div>
 
-  <ScrollReveal client:visible>
-    <Pricing />
-  </ScrollReveal>
+  <div id="pricing">
+    <ScrollReveal client:visible>
+      <Pricing />
+    </ScrollReveal>
+  </div>
 
-  <ScrollReveal client:visible>
-    <Location />
-  </ScrollReveal>
+  <div id="location">
+    <ScrollReveal client:visible>
+      <Location />
+    </ScrollReveal>
+  </div>
 
   <ScrollReveal client:visible>
     <FAQ client:visible />
   </ScrollReveal>
 
-  <ScrollReveal client:visible>
-    <ContactForm client:visible />
-  </ScrollReveal>
+  <div id="contact">
+    <ScrollReveal client:visible>
+      <ContactForm client:visible />
+    </ScrollReveal>
+  </div>
 </Layout>
