@@ -25,7 +25,7 @@ export const Location: React.FC = () => {
   };
 
   return (
-    <section id="location" className="py-24 bg-slate-50 dark:bg-slate-950 transition-colors border-b border-slate-200/60 dark:border-slate-900">
+    <section id="location" className="py-24 bg-slate-100 dark:bg-slate-950 transition-colors border-b border-slate-200 dark:border-slate-800">
       {/* Invisible Schema injection for search engines */}
       <script 
         type="application/ld+json"

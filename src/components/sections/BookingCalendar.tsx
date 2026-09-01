@@ -43,7 +43,7 @@ export const BookingCalendar: React.FC = () => {
             </h2>
             <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">Select your preferred date</p>
           </div>
-          <div className="flex items-center gap-1.5 bg-slate-50 dark:bg-slate-800/60 p-1 rounded-full border border-slate-200/60 dark:border-slate-700/50">
+          <div className="flex items-center gap-1.5 bg-slate-100 dark:bg-slate-800/60 p-1 rounded-full border border-slate-200/80 dark:border-slate-700/50">
             <button aria-label="Previous month" className="p-2 rounded-full hover:bg-white dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 transition-all shadow-sm focus:outline-none">
               <Lucide.ChevronLeft className="w-4 h-4" />
             </button>
@@ -85,8 +85,8 @@ export const BookingCalendar: React.FC = () => {
                   isSelected
                     ? 'bg-blue-600 text-white font-bold shadow-lg shadow-blue-500/30 scale-105 ring-4 ring-blue-600/20 z-10'
                     : hasAvailability
-                    ? 'text-slate-900 dark:text-white bg-slate-50 dark:bg-slate-800/40 hover:bg-slate-100 dark:hover:bg-slate-800 hover:scale-105 active:scale-95 border border-slate-200/60 dark:border-slate-700/50'
-                    : 'text-slate-300 dark:text-slate-600 hover:bg-slate-50 dark:hover:bg-slate-800/20'
+                    ? 'text-slate-900 dark:text-white bg-slate-100 dark:bg-slate-800/40 hover:bg-slate-200 dark:hover:bg-slate-800 hover:scale-105 active:scale-95 border border-slate-200/80 dark:border-slate-700/50'
+                    : 'text-slate-300 dark:text-slate-600 hover:bg-slate-100 dark:hover:bg-slate-800/20'
                 }`}
               >
                 {day}
@@ -119,7 +119,7 @@ export const BookingCalendar: React.FC = () => {
         <div className="relative overflow-hidden transition-all duration-300">
           <div className={`transition-all duration-300 ease-in-out ${isConfirmed ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-4 absolute inset-0 pointer-events-none'}`}>
             {isConfirmed && (
-              <div className="bg-slate-50/80 dark:bg-slate-800/40 border border-slate-200/60 dark:border-slate-700/50 rounded-2xl p-6 text-center">
+              <div className="bg-slate-100/80 dark:bg-slate-800/40 border border-slate-200/80 dark:border-slate-700/50 rounded-2xl p-6 text-center">
                 <div className="w-14 h-14 rounded-2xl bg-blue-600 text-white flex items-center justify-center mx-auto mb-4 shadow-xl shadow-blue-500/25">
                   <Lucide.Check className="w-7 h-7" />
                 </div>
@@ -142,7 +142,7 @@ export const BookingCalendar: React.FC = () => {
 
           <div className={`transition-all duration-300 ease-in-out ${pendingTime && !isConfirmed ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-4 absolute inset-0 pointer-events-none'}`}>
             {pendingTime && !isConfirmed && (
-              <div className="bg-slate-50/80 dark:bg-slate-800/40 border border-slate-200/60 dark:border-slate-700/50 rounded-2xl p-6 text-center">
+              <div className="bg-slate-100/80 dark:bg-slate-800/40 border border-slate-200/80 dark:border-slate-700/50 rounded-2xl p-6 text-center">
                 <div className="w-14 h-14 rounded-2xl bg-amber-500 text-white flex items-center justify-center mx-auto mb-4 shadow-xl shadow-amber-500/25">
                   <Lucide.HelpCircle className="w-7 h-7" />
                 </div>
@@ -153,7 +153,7 @@ export const BookingCalendar: React.FC = () => {
                 <div className="flex gap-2.5">
                   <button
                     onClick={handleCancelBooking}
-                    className="flex-1 py-3 px-3 rounded-full border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 font-bold text-[11px] uppercase tracking-wider transition-all focus:outline-none"
+                    className="flex-1 py-3 px-3 rounded-full border border-slate-300 dark:border-slate-700 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-300 font-bold text-[11px] uppercase tracking-wider transition-all focus:outline-none"
                   >
                     Cancel
                   </button>
@@ -175,7 +175,7 @@ export const BookingCalendar: React.FC = () => {
                   <button
                     key={time}
                     onClick={() => handleSelectTime(time)}
-                    className="group relative py-3.5 px-4 rounded-2xl border border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/30 text-slate-800 dark:text-slate-200 font-bold text-sm hover:border-blue-500 dark:hover:border-blue-500 hover:bg-blue-600 hover:text-white transition-all duration-200 text-center shadow-sm overflow-hidden focus:outline-none"
+                    className="group relative py-3.5 px-4 rounded-2xl border border-slate-200/80 dark:border-slate-800 bg-slate-100/70 dark:bg-slate-800/30 text-slate-800 dark:text-slate-200 font-bold text-sm hover:border-blue-500 dark:hover:border-blue-500 hover:bg-blue-600 hover:text-white transition-all duration-200 text-center shadow-sm overflow-hidden focus:outline-none"
                   >
                     <span className="relative z-10 flex items-center justify-center gap-2">
                       <Lucide.Clock className="w-4 h-4 opacity-50 group-hover:opacity-100 transition-opacity" />

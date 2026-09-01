@@ -37,11 +37,11 @@ export const Hero: React.FC = () => {
 
   return (
     <section 
-      className="relative min-h-[calc(100vh-4rem)] flex flex-col justify-between bg-cover bg-center overflow-hidden transition-colors border-b border-slate-200/60 dark:border-slate-900"
+      className="relative min-h-[calc(100vh-4rem)] flex flex-col justify-between bg-cover bg-center overflow-hidden transition-colors border-b border-slate-200 dark:border-slate-900"
       style={{ backgroundImage: "url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=2000&q=80')" }}
     >
-      {/* Unified gradient overlay spanning the entire hero and ticker block */}
-      <div className="absolute inset-0 bg-gradient-to-b from-white/85 via-white/90 to-white/95 dark:from-slate-950/90 dark:via-slate-950/85 dark:to-slate-950/95 transition-colors"></div>
+      {/* Gradient overlay using slate-100 for a richer, more defined contrast in light mode */}
+      <div className="absolute inset-0 bg-gradient-to-b from-slate-100/90 via-slate-100/95 to-slate-100 dark:from-slate-950/90 dark:via-slate-950/85 dark:to-slate-950/95 transition-colors"></div>
 
       {/* Hero Main Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-20 lg:pt-28 pb-12 my-auto">
@@ -65,7 +65,7 @@ export const Hero: React.FC = () => {
           
           <button 
             onClick={() => scrollToSection('services')}
-            className="items-center gap-3 inline-flex border border-slate-300 dark:border-slate-700 text-slate-800 dark:text-slate-200 bg-white/50 dark:bg-slate-900/50 hover:bg-white/80 dark:hover:bg-slate-800/80 duration-200 font-bold rounded-full text-sm tracking-widest transition-all uppercase px-8 py-4 backdrop-blur-sm"
+            className="items-center gap-3 inline-flex border border-slate-300 dark:border-slate-700 text-slate-800 dark:text-slate-200 bg-white/80 dark:bg-slate-900/50 hover:bg-white dark:hover:bg-slate-800/80 duration-200 font-bold rounded-full text-sm tracking-widest transition-all uppercase px-8 py-4 backdrop-blur-sm shadow-sm"
           >
             Explore Services
           </button>

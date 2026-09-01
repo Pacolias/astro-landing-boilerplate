@@ -22,7 +22,7 @@ export const Services: React.FC = () => {
   ];
 
   return (
-    <section id="services" className="py-20 bg-slate-50 dark:bg-slate-950 border-b border-slate-100 dark:border-slate-800 transition-colors">
+    <section id="services" className="py-20 bg-slate-100 dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading 
           title="Our Services" 
@@ -34,7 +34,7 @@ export const Services: React.FC = () => {
           {offerings.map((service, index) => (
             <div 
               key={index}
-              className="p-8 bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-800 flex flex-col transition-all hover:-translate-y-1 duration-300"
+              className="p-8 bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-200/80 dark:border-slate-800 flex flex-col transition-all hover:-translate-y-1 duration-300"
             >
               <div className="w-12 h-12 rounded-xl bg-blue-50 dark:bg-blue-950/50 flex items-center justify-center mb-6">
                 {service.icon}

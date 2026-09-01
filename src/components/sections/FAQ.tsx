@@ -44,7 +44,7 @@ export const FAQ: React.FC = () => {
             return (
               <div 
                 key={index} 
-                className="bg-slate-50 dark:bg-slate-950 p-6 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 transition-colors"
+                className="bg-slate-100 dark:bg-slate-950 p-6 rounded-xl shadow-sm border border-slate-200/80 dark:border-slate-800 transition-colors"
               >
                 <button 
                   onClick={() => toggleFAQ(index)}
