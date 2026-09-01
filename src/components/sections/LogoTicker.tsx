@@ -2,54 +2,56 @@ import React from 'react';
 import * as Lucide from 'lucide-react';
 
 export const LogoTicker: React.FC = () => {
-  // Generic placeholder logos using Lucide icons and text
   const logos = [
-    { name: 'Acme Corp', icon: Lucide.Briefcase },
-    { name: 'Quantum', icon: Lucide.Cpu },
-    { name: 'Globex', icon: Lucide.Globe },
-    { name: 'Stark Ind.', icon: Lucide.Zap },
-    { name: 'Initech', icon: Lucide.Printer },
-    { name: 'Soylent', icon: Lucide.Leaf },
+    { name: 'ACME CORP', icon: Lucide.Briefcase },
+    { name: 'QUANTUM', icon: Lucide.Cpu },
+    { name: 'GLOBEX', icon: Lucide.Globe },
+    { name: 'STARK IND.', icon: Lucide.Zap },
+    { name: 'INITECH', icon: Lucide.Printer },
+    { name: 'SOYLENT', icon: Lucide.Leaf },
   ];
 
+  const renderLogos = (copy: number) =>
+    logos.map((logo, index) => {
+      const Icon = logo.icon;
+
+      return (
+        <div
+          key={`${copy}-${index}`}
+          className="flex items-center gap-3.5 px-12 shrink-0 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors cursor-default select-none"
+        >
+          <Icon className="w-8 h-8 shrink-0" />
+          <span className="text-xl font-bold tracking-wider font-mono whitespace-nowrap">
+            {logo.name}
+          </span>
+        </div>
+      );
+    });
+
   return (
-    <section className="py-12 bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 overflow-hidden transition-colors">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <p className="text-center text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-8">
+    <section className="py-12 bg-white dark:bg-slate-950 border-b border-slate-200/60 dark:border-slate-900 overflow-hidden transition-colors">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6">
+        <p className="text-center text-xs font-mono uppercase tracking-widest text-slate-400 dark:text-slate-500">
           Trusted by innovative companies worldwide
         </p>
-        
-        {/* Mask image creates a smooth fade effect on the left and right edges */}
-        <div className="flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]">
-          {/* The container that animates. We pause it on hover for better UX. */}
-          <div className="flex flex-none animate-marquee hover:[animation-play-state:paused]">
-            
-            {/* First set of logos */}
-            <div className="flex flex-none gap-16 pr-16 items-center">
-              {logos.map((logo, index) => {
-                const Icon = logo.icon;
-                return (
-                  <div key={`logo-1-${index}`} className="flex items-center gap-2 text-slate-400 dark:text-slate-500 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 hover:text-slate-900 dark:hover:text-white transition-all duration-300">
-                    <Icon className="w-8 h-8" />
-                    <span className="text-xl font-bold">{logo.name}</span>
-                  </div>
-                );
-              })}
-            </div>
-            
-            {/* Second set (exact duplicate required for the seamless loop) */}
-            <div className="flex flex-none gap-16 pr-16 items-center" aria-hidden="true">
-              {logos.map((logo, index) => {
-                const Icon = logo.icon;
-                return (
-                  <div key={`logo-2-${index}`} className="flex items-center gap-2 text-slate-400 dark:text-slate-500 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 hover:text-slate-900 dark:hover:text-white transition-all duration-300">
-                    <Icon className="w-8 h-8" />
-                    <span className="text-xl font-bold">{logo.name}</span>
-                  </div>
-                );
-              })}
-            </div>
+      </div>
 
+      <div className="relative w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)]">
+        <div className="flex w-max ticker hover:[animation-play-state:paused]">
+          <div className="flex shrink-0">
+            {renderLogos(1)}
+          </div>
+
+          <div className="flex shrink-0" aria-hidden="true">
+            {renderLogos(2)}
+          </div>
+
+          <div className="flex shrink-0" aria-hidden="true">
+            {renderLogos(3)}
+          </div>
+
+          <div className="flex shrink-0" aria-hidden="true">
+            {renderLogos(4)}
           </div>
         </div>
       </div>
