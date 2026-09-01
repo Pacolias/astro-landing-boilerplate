@@ -1,6 +1,5 @@
 import React from 'react';
 import { SectionHeading } from '../ui/SectionHeading';
-import { Button } from '../ui/Button';
 
 export const ContactForm: React.FC = () => {
   return (
@@ -63,9 +62,12 @@ export const ContactForm: React.FC = () => {
             </div>
 
             <div className="flex justify-end pt-2">
-              <Button type="submit" variant="primary" size="lg" className="w-full sm:w-auto">
+              <button
+                type="submit"
+                className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-slate-900 dark:bg-slate-800 hover:bg-slate-800 dark:hover:bg-slate-700 text-white font-bold text-xs uppercase tracking-widest shadow-sm transition-all duration-200"
+              >
                 Send Message
-              </Button>
+              </button>
             </div>
           </form>
         </div>
