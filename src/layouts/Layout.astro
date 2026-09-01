@@ -1,0 +1,29 @@
+---
+import { SITE_CONFIG } from '../config';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { 
+  title = SITE_CONFIG.siteName, 
+  description = SITE_CONFIG.siteDescription 
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta name="author" content={SITE_CONFIG.clientName} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    
+    <title>{title}</title>
+  </head>
+  <body class="min-h-screen bg-slate-50 text-slate-900 font-sans antialiased selection:bg-blue-200">
+    <slot />
+  </body>
+</html>
