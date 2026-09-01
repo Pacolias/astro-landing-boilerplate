@@ -1,0 +1,86 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { SITE_CONFIG } from '../config.ts';
+import * as Lucide from 'lucide-react';
+---
+
+<Layout title={`Privacy Policy | ${SITE_CONFIG.siteName}`} description="Learn how we collect, use, and protect your personal information.">
+  <section class="py-20 bg-slate-50 dark:bg-slate-950 min-h-[calc(100vh-4rem)] transition-colors">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between mb-8">
+        <a 
+          href="/" 
+          class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-slate-900 dark:bg-slate-800 hover:bg-slate-800 dark:hover:bg-slate-700 text-white font-bold text-xs uppercase tracking-widest shadow-sm transition-all duration-200"
+        >
+          <Lucide.ArrowLeft className="w-4 h-4" /> Back to Home
+        </a>
+      </div>
+
+      <div class="bg-white dark:bg-slate-900 rounded-3xl shadow-xl shadow-slate-900/5 dark:shadow-none border border-slate-200/80 dark:border-slate-800 p-8 sm:p-12 transition-colors space-y-8 text-slate-700 dark:text-slate-300">
+        <div class="border-b border-slate-100 dark:border-slate-800 pb-6">
+          <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-2">
+            Privacy Policy
+          </h1>
+          <p class="text-sm text-slate-500 dark:text-slate-400">
+            Last updated: September 1, 2026
+          </p>
+        </div>
+
+        <div class="space-y-6 text-sm sm:text-base leading-relaxed">
+          <section class="space-y-3">
+            <h2 class="text-xl font-bold text-slate-900 dark:text-white">1. Information We Collect</h2>
+            <p>
+              We collect information that you provide directly to us when you fill out forms, communicate with us, or request customer support. This may include:
+            </p>
+            <ul class="list-disc pl-6 space-y-1 text-slate-600 dark:text-slate-400">
+              <li>Name and contact data (email address, phone number).</li>
+              <li>Information about your project requirements or business needs.</li>
+              <li>Any other information you choose to provide.</li>
+            </ul>
+          </section>
+
+          <section class="space-y-3">
+            <h2 class="text-xl font-bold text-slate-900 dark:text-white">2. How We Use Your Information</h2>
+            <p>
+              We use the information we collect to deliver, maintain, and improve our services. Specifically, we may use your information to:
+            </p>
+            <ul class="list-disc pl-6 space-y-1 text-slate-600 dark:text-slate-400">
+              <li>Respond to your comments, questions, and requests.</li>
+              <li>Provide and deliver the products and services you request.</li>
+              <li>Send you technical notices, updates, security alerts, and support messages.</li>
+              <li>Monitor and analyze trends, usage, and activities in connection with our services.</li>
+            </ul>
+          </section>
+
+          <section class="space-y-3">
+            <h2 class="text-xl font-bold text-slate-900 dark:text-white">3. Information Sharing</h2>
+            <p>
+              We do not share your personal information with third parties except as described in this privacy policy. We may share information with vendors, consultants, and other service providers who need access to such information to carry out work on our behalf.
+            </p>
+          </section>
+
+          <section class="space-y-3">
+            <h2 class="text-xl font-bold text-slate-900 dark:text-white">4. Data Security</h2>
+            <p>
+              We take reasonable measures to help protect information about you from loss, theft, misuse and unauthorized access, disclosure, alteration, and destruction. However, no internet or email transmission is ever fully secure or error-free.
+            </p>
+          </section>
+
+          <section class="space-y-3">
+            <h2 class="text-xl font-bold text-slate-900 dark:text-white">5. Your Rights</h2>
+            <p>
+              Depending on your location, you may have certain rights regarding your personal data, such as the right to access, update, or delete the information we have on you. If you wish to exercise these rights, please contact us.
+            </p>
+          </section>
+
+          <section class="space-y-3">
+            <h2 class="text-xl font-bold text-slate-900 dark:text-white">6. Contact Us</h2>
+            <p>
+              If you have any questions or concerns about this Privacy Policy, please contact us at <span class="font-semibold text-slate-900 dark:text-white">{SITE_CONFIG.contactEmail}</span>.
+            </p>
+          </section>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
