@@ -4,9 +4,9 @@ import { Hero } from '../components/sections/Hero';
 import { LogoTicker } from '../components/sections/LogoTicker';
 import { About } from '../components/sections/About';
 import { Services } from '../components/sections/Services';
+import { Pricing } from '../components/sections/Pricing';
 import { Testimonials } from '../components/sections/Testimonials';
 import { FAQ } from '../components/sections/FAQ';
-import { Pricing } from '../components/sections/Pricing';
 import { Location } from '../components/sections/Location';
 import { ContactForm } from '../components/sections/ContactForm';
 import { ScrollReveal } from '../components/ui/ScrollReveal';
@@ -23,18 +23,17 @@ import { ScrollReveal } from '../components/ui/ScrollReveal';
   <ScrollReveal client:load>
     <Services />
   </ScrollReveal>
+
+  <ScrollReveal client:load>
+    <Pricing />
+  </ScrollReveal>
   
   <ScrollReveal client:load>
-    {/* Added client:load to enable slider interactivity */}
     <Testimonials client:load />
   </ScrollReveal>
   
   <ScrollReveal client:load>
     <FAQ />
-  </ScrollReveal>
-
-  <ScrollReveal client:load>
-    <Pricing />
   </ScrollReveal>
   
   <ScrollReveal client:load>
