@@ -58,10 +58,10 @@ export const Navbar: React.FC = () => {
               </a>
             ))}
 
-            {/* Booking Button styled with a rounded blue rectangle */}
+            {/* Booking Button styled with pill shape and solid blue color */}
             <a
               href="/booking"
-              className="px-4 py-2 text-sm font-medium text-blue-600 dark:text-blue-400 border border-blue-600 dark:border-blue-500 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-950/30 transition-colors"
+              className="px-5 py-2 text-xs font-bold uppercase tracking-widest text-white bg-blue-600 hover:bg-blue-500 rounded-full transition-all duration-200 shadow-sm"
             >
               Booking
             </a>
@@ -111,7 +111,7 @@ export const Navbar: React.FC = () => {
             <a
               href="/booking"
               onClick={() => setIsOpen(false)}
-              className="block px-3 py-2 text-base font-medium text-blue-600 dark:text-blue-400 border border-blue-600 dark:border-blue-500 rounded-lg text-center hover:bg-blue-50 dark:hover:bg-blue-950/30"
+              className="block px-3 py-2.5 text-xs font-bold uppercase tracking-widest text-white bg-blue-600 hover:bg-blue-500 rounded-full text-center transition-all"
             >
               Booking
             </a>
