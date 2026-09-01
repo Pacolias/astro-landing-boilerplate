@@ -13,7 +13,7 @@ import { ScrollReveal } from '../components/ui/ScrollReveal';
 ---
 
 <Layout>
-  <Hero />
+  <Hero client:load />
   <!-- Uncomment the line below to display the logo ticker separately wrt the hero -->
   <!-- <LogoTicker /> -->
   
@@ -21,9 +21,12 @@ import { ScrollReveal } from '../components/ui/ScrollReveal';
     <About />
   </ScrollReveal>
   
-  <ScrollReveal client:load>
-    <Services />
-  </ScrollReveal>
+  <!-- Añadimos el id="services" aquí -->
+  <section id="services">
+    <ScrollReveal client:load>
+      <Services />
+    </ScrollReveal>
+  </section>
 
   <ScrollReveal client:load>
     <Pricing />
