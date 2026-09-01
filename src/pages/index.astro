@@ -4,6 +4,7 @@ import { Hero } from '../components/sections/Hero';
 import { LogoTicker } from '../components/sections/LogoTicker';
 import { Services } from '../components/sections/Services';
 import { Testimonials } from '../components/sections/Testimonials';
+import { FAQ } from '../components/sections/FAQ';
 import { ContactForm } from '../components/sections/ContactForm';
 ---
 
@@ -11,9 +12,10 @@ import { ContactForm } from '../components/sections/ContactForm';
   <Hero />
   <LogoTicker />
   <Services />
-  
-  {/* Rendered as static HTML */}
   <Testimonials />
+  
+  {/* Native HTML details/summary requires zero JS hydration */}
+  <FAQ />
   
   <ContactForm client:load />
 </Layout>
