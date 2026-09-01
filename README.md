@@ -20,16 +20,17 @@ A minimal, highly optimized starter template for building static landing pages a
 src/
 ├── components/
 │   ├── layout/         # Structural wrappers (Navbar, Footer)
-│   ├── sections/       # Landing page blocks (Hero, Services, ContactForm)
-│   └── ui/             # Reusable primitives (Button, Card, SectionHeading)
+│   ├── sections/       # Landing page blocks (Hero, LogoTicker, About, Services, Testimonials, FAQ, Pricing, Location, ContactForm)
+│   └── ui/             # Reusable primitives (Button, Card, SectionHeading, TestimonialCard, WhatsAppButton, ScrollReveal)
+├── hooks/              # Custom React hooks (useScrollReveal)
 ├── layouts/
 │   └── Layout.astro    # Global HTML shell and SEO metadata container
 ├── pages/
-│   └── index.astro     # Main application entry point
+│   ├── index.astro     # Main application entry point
+│   └── booking.astro   # Dedicated scheduling page route
 ├── styles/
 │   └── global.css      # Tailwind base declarations
 └── config.ts           # Centralized client configuration core
-
 ```
 
 ## Getting Started
