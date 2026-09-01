@@ -38,6 +38,7 @@ const {
           }
           return 'light';
         })();
+        
         if (theme === 'dark') {
           document.documentElement.classList.add('dark');
         } else {
@@ -45,10 +46,10 @@ const {
         }
       };
 
-      // Aplicar al cargar la página inicialmente
+      // Aplicar inmediatamente al cargar el documento para evitar parpadeos
       applyTheme();
 
-      // Volver a aplicar el tema cada vez que Astro cambie de página mediante View Transitions
+      // Sincronizar tema al cambiar de página con View Transitions
       document.addEventListener('astro:after-swap', applyTheme);
     </script>
   </head>
