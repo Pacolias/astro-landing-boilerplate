@@ -3,6 +3,7 @@ import '../styles/global.css';
 import { SITE_CONFIG } from '../config.ts';
 import { Navbar } from '../components/layout/Navbar';
 import { Footer } from '../components/layout/Footer';
+import { WhatsAppButton } from '../components/ui/WhatsAppButton';
 
 interface Props {
   title?: string;
@@ -16,7 +17,7 @@ const {
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -27,9 +28,14 @@ const {
   </head>
   <body class="min-h-screen flex flex-col bg-slate-50 text-slate-900 font-sans antialiased selection:bg-blue-200">
     <Navbar client:load />
+    
     <main class="flex-grow">
       <slot />
     </main>
+    
     <Footer />
+    
+    {/* Global persistent FAB */}
+    <WhatsAppButton />
   </body>
 </html>
