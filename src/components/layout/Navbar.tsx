@@ -59,7 +59,7 @@ export const Navbar: React.FC = () => {
 
             <a
               href="/booking"
-              className="px-5 py-2 text-xs font-bold uppercase tracking-widest text-white bg-blue-600 hover:bg-blue-500 rounded-full transition-all duration-200 shadow-sm"
+              className="font-bold uppercase text-xs bg-blue-600 duration-200 hover:bg-blue-500 hover:scale-105 px-4 py-2 rounded-full text-white text-center tracking-widest transition-all inline-block shadow-sm"
             >
               Booking
             </a>
@@ -109,7 +109,7 @@ export const Navbar: React.FC = () => {
             <a
               href="/booking"
               onClick={() => setIsOpen(false)}
-              className="block px-3 py-2.5 text-xs font-bold uppercase tracking-widest text-white bg-blue-600 hover:bg-blue-500 rounded-full text-center transition-all"
+              className="block font-bold uppercase text-xs bg-blue-600 duration-200 hover:bg-blue-500 hover:scale-[1.02] px-4 py-2.5 rounded-full text-white text-center tracking-widest transition-all mt-4 mx-2"
             >
               Booking
             </a>
