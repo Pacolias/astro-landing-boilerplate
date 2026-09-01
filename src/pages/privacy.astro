@@ -8,12 +8,13 @@ import * as Lucide from 'lucide-react';
   <section class="py-20 bg-slate-100 dark:bg-slate-950 min-h-[calc(100vh-4rem)] transition-colors">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between mb-8">
-        <a 
-          href="/" 
-          class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-slate-900 dark:bg-slate-800 hover:bg-slate-800 dark:hover:bg-slate-700 text-white font-bold text-xs uppercase tracking-widest shadow-sm transition-all duration-200"
+        <button 
+          type="button"
+          id="close-tab-btn"
+          class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-slate-900 dark:bg-slate-800 hover:bg-slate-800 dark:hover:bg-slate-700 text-white font-bold text-xs uppercase tracking-widest shadow-sm transition-all duration-200 cursor-pointer"
         >
           <Lucide.ArrowLeft className="w-4 h-4" /> Back to Home
-        </a>
+        </button>
       </div>
 
       <div class="bg-white dark:bg-slate-900 rounded-3xl shadow-xl shadow-slate-900/5 dark:shadow-none border border-slate-200/80 dark:border-slate-800 p-8 sm:p-12 transition-colors space-y-8 text-slate-700 dark:text-slate-300">
@@ -83,4 +84,10 @@ import * as Lucide from 'lucide-react';
       </div>
     </div>
   </section>
+
+  <script>
+    document.getElementById('close-tab-btn')?.addEventListener('click', () => {
+      window.close();
+    });
+  </script>
 </Layout>
