@@ -23,7 +23,7 @@ export const FAQ: React.FC = () => {
   ];
 
   return (
-    <section id="faq" className="py-20 bg-slate-50 border-b border-slate-100">
+    <section id="faq" className="py-20 bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 transition-colors">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading 
           title="Frequently Asked Questions" 
@@ -35,15 +35,15 @@ export const FAQ: React.FC = () => {
           {faqs.map((faq, index) => (
             <details 
               key={index} 
-              className="group bg-white p-6 rounded-xl shadow-sm border border-slate-100 [&_summary::-webkit-details-marker]:hidden"
+              className="group bg-slate-50 dark:bg-slate-950 p-6 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 [&_summary::-webkit-details-marker]:hidden transition-colors"
             >
-              <summary className="flex justify-between items-center font-semibold cursor-pointer text-slate-900 list-none">
+              <summary className="flex justify-between items-center font-semibold cursor-pointer text-slate-900 dark:text-white list-none">
                 <span className="pr-4">{faq.question}</span>
                 <span className="transition-transform duration-300 group-open:rotate-180 flex-shrink-0">
-                  <Lucide.ChevronDown className="w-5 h-5 text-slate-400" />
+                  <Lucide.ChevronDown className="w-5 h-5 text-slate-400 dark:text-slate-500" />
                 </span>
               </summary>
-              <div className="text-slate-600 mt-4 leading-relaxed">
+              <div className="text-slate-600 dark:text-slate-400 mt-4 leading-relaxed">
                 {faq.answer}
               </div>
             </details>

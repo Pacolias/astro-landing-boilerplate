@@ -13,9 +13,9 @@ export const LogoTicker: React.FC = () => {
   ];
 
   return (
-    <section className="py-12 bg-white border-b border-slate-100 overflow-hidden">
+    <section className="py-12 bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 overflow-hidden transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <p className="text-center text-sm font-semibold text-slate-500 uppercase tracking-wider mb-8">
+        <p className="text-center text-sm font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-8">
           Trusted by innovative companies worldwide
         </p>
         
@@ -29,7 +29,7 @@ export const LogoTicker: React.FC = () => {
               {logos.map((logo, index) => {
                 const Icon = logo.icon;
                 return (
-                  <div key={`logo-1-${index}`} className="flex items-center gap-2 text-slate-400 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 hover:text-slate-900 transition-all duration-300">
+                  <div key={`logo-1-${index}`} className="flex items-center gap-2 text-slate-400 dark:text-slate-500 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 hover:text-slate-900 dark:hover:text-white transition-all duration-300">
                     <Icon className="w-8 h-8" />
                     <span className="text-xl font-bold">{logo.name}</span>
                   </div>
@@ -42,7 +42,7 @@ export const LogoTicker: React.FC = () => {
               {logos.map((logo, index) => {
                 const Icon = logo.icon;
                 return (
-                  <div key={`logo-2-${index}`} className="flex items-center gap-2 text-slate-400 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 hover:text-slate-900 transition-all duration-300">
+                  <div key={`logo-2-${index}`} className="flex items-center gap-2 text-slate-400 dark:text-slate-500 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 hover:text-slate-900 dark:hover:text-white transition-all duration-300">
                     <Icon className="w-8 h-8" />
                     <span className="text-xl font-bold">{logo.name}</span>
                   </div>

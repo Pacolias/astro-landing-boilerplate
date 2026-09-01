@@ -38,7 +38,7 @@ export const Testimonials: React.FC = () => {
   };
 
   return (
-    <section id="testimonials" className="py-20 bg-white border-b border-slate-100 overflow-hidden">
+    <section id="testimonials" className="py-20 bg-slate-50 dark:bg-slate-950 border-b border-slate-100 dark:border-slate-800 overflow-hidden transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading 
           title="What Our Clients Say" 
@@ -49,7 +49,7 @@ export const Testimonials: React.FC = () => {
         <div className="relative mt-12 max-w-[95%] mx-auto">
           <button 
             onClick={() => scroll('left')}
-            className="absolute -left-4 sm:-left-6 top-1/2 -translate-y-1/2 z-10 w-12 h-12 flex items-center justify-center rounded-full bg-white border border-slate-200 shadow-md text-slate-600 hover:text-slate-900 transition-all focus:outline-none"
+            className="absolute -left-4 sm:-left-6 top-1/2 -translate-y-1/2 z-10 w-12 h-12 flex items-center justify-center rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-md text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-all focus:outline-none"
             aria-label="Previous testimonial"
           >
             <Lucide.ChevronLeft className="w-7 h-7" />
@@ -75,7 +75,7 @@ export const Testimonials: React.FC = () => {
 
           <button 
             onClick={() => scroll('right')}
-            className="absolute -right-4 sm:-right-6 top-1/2 -translate-y-1/2 z-10 w-12 h-12 flex items-center justify-center rounded-full bg-white border border-slate-200 shadow-md text-slate-600 hover:text-slate-900 transition-all focus:outline-none"
+            className="absolute -right-4 sm:-right-6 top-1/2 -translate-y-1/2 z-10 w-12 h-12 flex items-center justify-center rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-md text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-all focus:outline-none"
             aria-label="Next testimonial"
           >
             <Lucide.ChevronRight className="w-7 h-7" />

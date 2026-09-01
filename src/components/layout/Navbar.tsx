@@ -4,51 +4,89 @@ import * as Lucide from 'lucide-react';
 
 export const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = React.useState(false);
+  const [isDark, setIsDark] = React.useState(false);
 
+  React.useEffect(() => {
+    const isDarkMode = document.documentElement.classList.contains('dark');
+    setIsDark(isDarkMode);
+  }, []);
+
+  const toggleTheme = () => {
+    if (document.documentElement.classList.contains('dark')) {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+      setIsDark(false);
+    } else {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+      setIsDark(true);
+    }
+  };
+
+  // Curated list focusing on primary landing page pillars to eliminate visual clutter
   const navLinks = [
-    { name: 'Home', href: '/' },
     { name: 'About', href: '/#about' },
     { name: 'Services', href: '/#services' },
     { name: 'Pricing', href: '/#pricing' },
-    { name: 'Testimonials', href: '/#testimonials' },
-    { name: 'FAQ', href: '/#faq' },
-    { name: 'Location', href: '/#location' },
-    { name: 'Booking', href: '/booking' },
     { name: 'Contact', href: '/#contact' },
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-white border-b border-slate-100 shadow-sm">
+    <header className="sticky top-0 z-50 w-full bg-slate-100/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-900 shadow-sm transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           
           <a href="/" className="flex items-center gap-2 flex-shrink-0 group focus:outline-none">
             {SITE_CONFIG.showLogo && (
-              <div className="w-8 h-8 bg-slate-900 text-white rounded-lg flex items-center justify-center group-hover:bg-slate-800 transition-colors">
+              <div className="w-8 h-8 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-lg flex items-center justify-center transition-colors">
                 <Lucide.Hexagon className="w-5 h-5" />
               </div>
             )}
-            <span className="font-bold text-xl tracking-tight text-slate-900 group-hover:text-slate-700 transition-colors">
+            <span className="font-bold text-xl tracking-tight text-slate-900 dark:text-white transition-colors">
               {SITE_CONFIG.siteName}
             </span>
           </a>
           
-          <nav className="hidden md:flex space-x-4 lg:space-x-6">
+          <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
             {navLinks.map((link) => (
               <a 
                 key={link.name} 
                 href={link.href} 
-                className="text-slate-600 hover:text-slate-900 transition-colors font-medium text-sm"
+                className="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors font-medium text-sm"
               >
                 {link.name}
               </a>
             ))}
+
+            {/* Booking Button styled with a rounded blue rectangle */}
+            <a
+              href="/booking"
+              className="px-4 py-2 text-sm font-medium text-blue-600 dark:text-blue-400 border border-blue-600 dark:border-blue-500 rounded-lg hover:bg-blue-50 dark:hover:bg-blue-950/30 transition-colors"
+            >
+              Booking
+            </a>
+
+            <button
+              onClick={toggleTheme}
+              aria-label="Toggle theme"
+              className="p-2 rounded-lg bg-slate-200 dark:bg-slate-900 text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
+            >
+              {isDark ? <Lucide.Sun className="w-5 h-5" /> : <Lucide.Moon className="w-5 h-5" />}
+            </button>
           </nav>
 
-          <div className="md:hidden flex items-center">
+          <div className="md:hidden flex items-center gap-3">
+            <button
+              onClick={toggleTheme}
+              aria-label="Toggle theme"
+              className="p-2 rounded-lg bg-slate-200 dark:bg-slate-900 text-slate-600 dark:text-slate-300"
+            >
+              {isDark ? <Lucide.Sun className="w-5 h-5" /> : <Lucide.Moon className="w-5 h-5" />}
+            </button>
+
             <button 
               onClick={() => setIsOpen(!isOpen)}
-              className="text-slate-600 hover:text-slate-900 focus:outline-none"
+              className="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white focus:outline-none"
               aria-label="Toggle menu"
             >
               {isOpen ? <Lucide.X className="h-6 w-6" /> : <Lucide.Menu className="h-6 w-6" />}
@@ -58,18 +96,25 @@ export const Navbar: React.FC = () => {
       </div>
 
       {isOpen && (
-        <div className="md:hidden bg-white border-t border-slate-100">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <div className="md:hidden bg-slate-100 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-900 transition-colors">
+          <div className="px-4 pt-3 pb-4 space-y-2">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="block px-3 py-2 text-base font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-md"
+                className="block px-3 py-2 text-base font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-slate-900 rounded-md"
               >
                 {link.name}
               </a>
             ))}
+            <a
+              href="/booking"
+              onClick={() => setIsOpen(false)}
+              className="block px-3 py-2 text-base font-medium text-blue-600 dark:text-blue-400 border border-blue-600 dark:border-blue-500 rounded-lg text-center hover:bg-blue-50 dark:hover:bg-blue-950/30"
+            >
+              Booking
+            </a>
           </div>
         </div>
       )}
