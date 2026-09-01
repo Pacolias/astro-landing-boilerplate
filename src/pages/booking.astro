@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { BookingCalendar } from '../components/sections/BookingCalendar';
 import * as Lucide from 'lucide-react';
 ---
 
@@ -28,22 +29,13 @@ import * as Lucide from 'lucide-react';
           </div>
           <a 
             href="/" 
-            class="inline-flex items-center gap-2 text-sm font-semibold text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-slate-900 dark:bg-slate-800 hover:bg-slate-800 dark:hover:bg-slate-700 text-white font-bold text-xs uppercase tracking-widest shadow-sm transition-all duration-200"
           >
             <Lucide.ArrowLeft className="w-4 h-4" /> Back to Home
           </a>
         </div>
 
-        <div class="w-full h-[600px] bg-slate-50 dark:bg-slate-950 rounded-xl border border-dashed border-slate-300 dark:border-slate-800 flex flex-col items-center justify-center text-center p-6">
-          <Lucide.Clock className="w-12 h-12 text-slate-400 dark:text-slate-500 mb-4 animate-pulse" />
-          <h3 class="text-lg font-semibold text-slate-700 dark:text-slate-300 mb-2">Interactive Calendar Loading</h3>
-          <p class="text-sm text-slate-500 dark:text-slate-400 max-w-md mb-6">
-            Here you can embed your preferred scheduling widget iframe (such as Calendly, Cal.com, or Acuity Scheduling).
-          </p>
-          <span class="inline-flex items-center gap-2 px-4 py-2 bg-slate-900 dark:bg-slate-800 text-white rounded-lg text-sm font-medium">
-            Example Iframe Container
-          </span>
-        </div>
+        <BookingCalendar client:load />
       </div>
     </div>
   </section>
