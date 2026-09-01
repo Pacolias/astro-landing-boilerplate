@@ -7,12 +7,14 @@ export const Navbar: React.FC = () => {
 
   const navLinks = [
     { name: 'Home', href: '/' },
-    { name: 'About', href: '#about' },
-    { name: 'Services', href: '#services' },
-    { name: 'Testimonials', href: '#testimonials' },
-    { name: 'FAQ', href: '#faq' },
-    { name: 'Pricing', href: '#pricing' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'About', href: '/#about' },
+    { name: 'Services', href: '/#services' },
+    { name: 'Pricing', href: '/#pricing' },
+    { name: 'Testimonials', href: '/#testimonials' },
+    { name: 'FAQ', href: '/#faq' },
+    { name: 'Location', href: '/#location' },
+    { name: 'Booking', href: '/booking' },
+    { name: 'Contact', href: '/#contact' },
   ];
 
   return (
@@ -20,7 +22,6 @@ export const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           
-          {/* Brand section updated with Logo */}
           <a href="/" className="flex items-center gap-2 flex-shrink-0 group focus:outline-none">
             {SITE_CONFIG.showLogo && (
               <div className="w-8 h-8 bg-slate-900 text-white rounded-lg flex items-center justify-center group-hover:bg-slate-800 transition-colors">
@@ -32,7 +33,7 @@ export const Navbar: React.FC = () => {
             </span>
           </a>
           
-          <nav className="hidden md:flex space-x-6 lg:space-x-8">
+          <nav className="hidden md:flex space-x-4 lg:space-x-6">
             {navLinks.map((link) => (
               <a 
                 key={link.name} 
