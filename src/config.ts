@@ -32,6 +32,11 @@ export const SITE_CONFIG: SiteConfig = {
   address: '123 Generic Street, City, Country',
   socials: [
     {
+      platform: 'X',
+      url: 'https://x.com',
+      icon: 'x',
+    },
+    {
       platform: 'Instagram',
       url: 'https://instagram.com/',
       icon: 'instagram'
@@ -40,7 +45,7 @@ export const SITE_CONFIG: SiteConfig = {
       platform: 'WhatsApp',
       url: 'https://wa.me/',
       icon: 'whatsapp'
-    }
+    },
   ],
   theme: {
     primary: '#1a365d',

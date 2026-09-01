@@ -14,9 +14,17 @@ const WhatsAppIcon: React.FC<{ className?: string }> = ({ className }) => (
   </svg>
 );
 
+const XIcon: React.FC<{ className?: string }> = ({ className }) => (
+  <svg className={className} fill="currentColor" viewBox="0 0 24 24">
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+  </svg>
+);
+
 const ICON_MAP: Record<string, React.ComponentType<{ className?: string }>> = {
   instagram: InstagramIcon,
-  whatsapp: WhatsAppIcon
+  whatsapp: WhatsAppIcon,
+  x: XIcon,
+  twitter: XIcon
 };
 
 export const Footer: React.FC = () => {
@@ -54,7 +62,7 @@ export const Footer: React.FC = () => {
             <h4 className="text-slate-900 dark:text-white font-semibold mb-4">Social</h4>
             <div className="flex justify-center space-x-4">
               {SITE_CONFIG.socials.map((social) => {
-                const IconComponent = ICON_MAP[social.icon];
+                const IconComponent = ICON_MAP[social.icon.toLowerCase()];
                 
                 return (
                   <a 
