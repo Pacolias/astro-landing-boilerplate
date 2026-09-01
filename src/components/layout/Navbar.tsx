@@ -1,14 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { SITE_CONFIG } from '../../config.ts';
 import * as Lucide from 'lucide-react';
 
 export const Navbar: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = React.useState(false);
 
   const navLinks = [
     { name: 'Home', href: '/' },
     { name: 'About', href: '#about' },
     { name: 'Services', href: '#services' },
+    { name: 'Testimonials', href: '#testimonials' },
+    { name: 'FAQ', href: '#faq' },
+    { name: 'Pricing', href: '#pricing' },
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -20,7 +23,7 @@ export const Navbar: React.FC = () => {
             {SITE_CONFIG.siteName}
           </div>
           
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden md:flex space-x-6 lg:space-x-8">
             {navLinks.map((link) => (
               <a 
                 key={link.name} 

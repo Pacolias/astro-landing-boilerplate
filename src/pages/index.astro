@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import { Hero } from '../components/sections/Hero';
 import { LogoTicker } from '../components/sections/LogoTicker';
+import { About } from '../components/sections/About';
 import { Services } from '../components/sections/Services';
 import { Testimonials } from '../components/sections/Testimonials';
 import { FAQ } from '../components/sections/FAQ';
@@ -10,9 +11,12 @@ import { ScrollReveal } from '../components/ui/ScrollReveal';
 ---
 
 <Layout>
-  {/* The Hero usually shouldn't have a scroll reveal since it's above the fold */}
   <Hero />
   <LogoTicker />
+  
+  <ScrollReveal client:load>
+    <About />
+  </ScrollReveal>
   
   <ScrollReveal client:load>
     <Services />
