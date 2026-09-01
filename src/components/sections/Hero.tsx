@@ -57,14 +57,15 @@ export const Hero: React.FC = () => {
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
           <a 
             href="/booking"
-            className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs uppercase tracking-widest shadow-lg shadow-blue-500/25 transition-all duration-200 text-center"
+            className="items-center gap-3 inline-flex bg-blue-600 duration-200 font-bold hover:bg-blue-500 hover:gap-5 no-underline px-8 py-4 rounded-full text-white text-sm tracking-widest transition-all uppercase shadow-lg shadow-blue-500/25"
           >
             Booking
+            <Lucide.ArrowRight className="w-5 h-5" />
           </a>
           
           <button 
             onClick={() => scrollToSection('services')}
-            className="w-full sm:w-auto px-8 py-3.5 rounded-full border border-slate-300 dark:border-slate-700 text-slate-800 dark:text-slate-200 font-bold text-xs uppercase tracking-widest bg-white/50 dark:bg-slate-900/50 hover:bg-white/80 dark:hover:bg-slate-800/80 transition-all duration-200 backdrop-blur-sm"
+            className="items-center gap-3 inline-flex border border-slate-300 dark:border-slate-700 text-slate-800 dark:text-slate-200 bg-white/50 dark:bg-slate-900/50 hover:bg-white/80 dark:hover:bg-slate-800/80 duration-200 font-bold rounded-full text-sm tracking-widest transition-all uppercase px-8 py-4 backdrop-blur-sm"
           >
             Explore Services
           </button>
