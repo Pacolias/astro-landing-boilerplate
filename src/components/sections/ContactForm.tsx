@@ -9,14 +9,13 @@ export const ContactForm: React.FC = () => {
     e.preventDefault();
     setStatus('submitting');
     
-    // Form submission simulation (replace this with your real logic using Formspree, Resend, etc.)
     setTimeout(() => {
       setStatus('success');
     }, 1500);
   };
 
   return (
-    <section id="contact" className="py-24 bg-white dark:bg-slate-900 transition-colors border-b border-slate-200/60 dark:border-slate-800">
+    <section id="contact" className="py-24 bg-slate-50 dark:bg-slate-950 transition-colors border-b border-slate-200/60 dark:border-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           
@@ -33,8 +32,8 @@ export const ContactForm: React.FC = () => {
 
             <div className="space-y-6">
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-300">
-                  <Lucide.Mail className="w-6 h-6" />
+                <div className="w-12 h-12 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-300 shadow-sm">
+                  <Lucide.Mail className="w-5 h-5" />
                 </div>
                 <div>
                   <p className="text-sm font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">Email</p>
@@ -46,8 +45,8 @@ export const ContactForm: React.FC = () => {
 
               {SITE_CONFIG.contactPhone && (
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-300">
-                    <Lucide.Phone className="w-6 h-6" />
+                  <div className="w-12 h-12 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-300 shadow-sm">
+                    <Lucide.Phone className="w-5 h-5" />
                   </div>
                   <div>
                     <p className="text-sm font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">Phone</p>
@@ -61,7 +60,7 @@ export const ContactForm: React.FC = () => {
           </div>
 
           {/* Right Form */}
-          <div className="bg-slate-50 dark:bg-slate-950 p-8 sm:p-10 rounded-3xl border border-slate-200/80 dark:border-slate-800 shadow-xl shadow-slate-900/5 dark:shadow-none">
+          <div className="bg-white dark:bg-slate-900 p-8 sm:p-10 rounded-3xl border border-slate-200/80 dark:border-slate-800 shadow-xl shadow-slate-900/5 dark:shadow-none">
             {status === 'success' ? (
               <div className="flex flex-col items-center justify-center text-center h-full min-h-[400px] py-12 space-y-4 animate-in fade-in zoom-in duration-500">
                 <div className="w-16 h-16 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 rounded-full flex items-center justify-center mb-2">
@@ -90,7 +89,7 @@ export const ContactForm: React.FC = () => {
                       id="name"
                       name="name"
                       required
-                      className="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
+                      className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
                       placeholder="John Doe"
                     />
                   </div>
@@ -103,7 +102,7 @@ export const ContactForm: React.FC = () => {
                       id="email"
                       name="email"
                       required
-                      className="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
+                      className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
                       placeholder="john@example.com"
                     />
                   </div>
@@ -118,7 +117,7 @@ export const ContactForm: React.FC = () => {
                     id="subject"
                     name="subject"
                     required
-                    className="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
+                    className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
                     placeholder="How can we help you?"
                   />
                 </div>
@@ -132,7 +131,7 @@ export const ContactForm: React.FC = () => {
                     name="message"
                     rows={4}
                     required
-                    className="w-full px-4 py-3 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all resize-none"
+                    className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all resize-none"
                     placeholder="Tell us about your project..."
                   ></textarea>
                 </div>
