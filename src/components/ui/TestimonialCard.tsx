@@ -15,7 +15,7 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({
   rating = 5
 }) => {
   return (
-    <div className="p-8 bg-slate-50 rounded-2xl shadow-sm border border-slate-100 flex flex-col h-full transition-transform hover:-translate-y-1 duration-300">
+    <div className="p-8 bg-white rounded-2xl shadow-[0_2px_8px_rgb(0,0,0,0.08)] border border-slate-100 flex flex-col h-full">
       <div className="flex gap-1 mb-6 text-yellow-400">
         {[...Array(5)].map((_, i) => (
           <Lucide.Star
@@ -30,8 +30,7 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({
       </blockquote>
       
       <div className="mt-auto flex items-center gap-4">
-        {/* Placeholder avatar, can be replaced with an actual image tag later */}
-        <div className="w-12 h-12 bg-slate-200 rounded-full flex items-center justify-center text-slate-500 shrink-0">
+        <div className="w-12 h-12 bg-slate-100 rounded-full flex items-center justify-center text-slate-500 shrink-0">
           <Lucide.User className="w-6 h-6" />
         </div>
         <div>
