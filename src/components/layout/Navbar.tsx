@@ -23,12 +23,11 @@ export const Navbar: React.FC = () => {
     }
   };
 
-  // Curated list focusing on primary landing page pillars to eliminate visual clutter
   const navLinks = [
-    { name: 'About', href: '/#about' },
-    { name: 'Services', href: '/#services' },
-    { name: 'Pricing', href: '/#pricing' },
-    { name: 'Contact', href: '/#contact' },
+    { name: 'ABOUT', href: '/#about' },
+    { name: 'SERVICES', href: '/#services' },
+    { name: 'PRICING', href: '/#pricing' },
+    { name: 'CONTACT', href: '/#contact' },
   ];
 
   return (
@@ -38,11 +37,11 @@ export const Navbar: React.FC = () => {
           
           <a href="/" className="flex items-center gap-2 flex-shrink-0 group focus:outline-none">
             {SITE_CONFIG.showLogo && (
-              <div className="w-8 h-8 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-lg flex items-center justify-center transition-colors">
+              <div className="w-8 h-8 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-lg flex items-center justify-center transition-all duration-300 group-hover:scale-105">
                 <Lucide.Hexagon className="w-5 h-5" />
               </div>
             )}
-            <span className="font-bold text-xl tracking-tight text-slate-900 dark:text-white transition-colors">
+            <span className="font-bold text-xl tracking-tight text-slate-900 dark:text-white transition-all duration-300 group-hover:scale-105 origin-left">
               {SITE_CONFIG.siteName}
             </span>
           </a>
@@ -52,13 +51,12 @@ export const Navbar: React.FC = () => {
               <a 
                 key={link.name} 
                 href={link.href} 
-                className="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors font-medium text-sm"
+                className="relative text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors font-medium text-sm tracking-wide uppercase after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 hover:after:w-full after:h-0.5 after:bg-blue-600 after:transition-all after:duration-300"
               >
                 {link.name}
               </a>
             ))}
 
-            {/* Booking Button styled with pill shape and solid blue color */}
             <a
               href="/booking"
               className="px-5 py-2 text-xs font-bold uppercase tracking-widest text-white bg-blue-600 hover:bg-blue-500 rounded-full transition-all duration-200 shadow-sm"
