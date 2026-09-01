@@ -1,0 +1,51 @@
+---
+import Layout from '../layouts/Layout.astro';
+import * as Lucide from 'lucide-react';
+---
+
+<Layout title="Book an Appointment | Generic Business Project" description="Schedule a consultation or appointment with our team.">
+  <section class="py-20 bg-slate-50 min-h-[calc(100vh-4rem)]">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h1 class="text-4xl font-extrabold text-slate-900 tracking-tight sm:text-5xl mb-4">
+          Schedule Your Consultation
+        </h1>
+        <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+          Select a suitable time slot below to book a direct one-on-one session with our team.
+        </p>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-8 sm:p-12">
+        <div class="flex flex-col md:flex-row gap-8 items-center justify-between border-b border-slate-100 pb-8 mb-8">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
+              <Lucide.Calendar className="w-6 h-6" />
+            </div>
+            <div>
+              <h3 class="font-bold text-slate-900 text-lg">Discovery Call</h3>
+              <p class="text-sm text-slate-500">30 minutes • Video Call via Google Meet / Zoom</p>
+            </div>
+          </div>
+          <a 
+            href="/" 
+            class="inline-flex items-center gap-2 text-sm font-semibold text-slate-600 hover:text-slate-900 transition-colors"
+          >
+            <Lucide.ArrowLeft className="w-4 h-4" /> Back to Home
+          </a>
+        </div>
+
+        {/* Embedded Scheduling Iframe Placeholder (e.g. Calendly wrapper) */}
+        <div class="w-full h-[600px] bg-slate-50 rounded-xl border border-dashed border-slate-300 flex flex-col items-center justify-center text-center p-6">
+          <Lucide.Clock className="w-12 h-12 text-slate-400 mb-4 animate-pulse" />
+          <h3 class="text-lg font-semibold text-slate-700 mb-2">Interactive Calendar Loading</h3>
+          <p class="text-sm text-slate-500 max-w-md mb-6">
+            Here you can embed your preferred scheduling widget iframe (such as Calendly, Cal.com, or Acuity Scheduling).
+          </p>
+          <span class="inline-flex items-center gap-2 px-4 py-2 bg-slate-900 text-white rounded-lg text-sm font-medium">
+            Example Iframe Container
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
