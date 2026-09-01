@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { SectionHeading } from '../ui/SectionHeading';
 import * as Lucide from 'lucide-react';
 
 export const FAQ: React.FC = () => {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+  const toggleFAQ = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
   const faqs = [
     {
       question: "How long does a typical project take?",
@@ -32,22 +38,36 @@ export const FAQ: React.FC = () => {
         />
         
         <div className="mt-12 space-y-4">
-          {faqs.map((faq, index) => (
-            <details 
-              key={index} 
-              className="group bg-slate-50 dark:bg-slate-950 p-6 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 [&_summary::-webkit-details-marker]:hidden transition-colors"
-            >
-              <summary className="flex justify-between items-center font-semibold cursor-pointer text-slate-900 dark:text-white list-none">
-                <span className="pr-4">{faq.question}</span>
-                <span className="transition-transform duration-300 group-open:rotate-180 flex-shrink-0">
-                  <Lucide.ChevronDown className="w-5 h-5 text-slate-400 dark:text-slate-500" />
-                </span>
-              </summary>
-              <div className="text-slate-600 dark:text-slate-400 mt-4 leading-relaxed">
-                {faq.answer}
+          {faqs.map((faq, index) => {
+            const isOpen = openIndex === index;
+            
+            return (
+              <div 
+                key={index} 
+                className="bg-slate-50 dark:bg-slate-950 p-6 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800 transition-colors"
+              >
+                <button 
+                  onClick={() => toggleFAQ(index)}
+                  className="w-full flex justify-between items-center font-semibold cursor-pointer text-slate-900 dark:text-white text-left focus:outline-none"
+                >
+                  <span className="pr-4">{faq.question}</span>
+                  <span className={`transform transition-transform duration-300 ease-in-out flex-shrink-0 ${isOpen ? 'rotate-180' : ''}`}>
+                    <Lucide.ChevronDown className="w-5 h-5 text-slate-400 dark:text-slate-500" />
+                  </span>
+                </button>
+                
+                <div 
+                  className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                    isOpen ? 'max-h-96 opacity-100 mt-4' : 'max-h-0 opacity-0 mt-0'
+                  }`}
+                >
+                  <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+                    {faq.answer}
+                  </p>
+                </div>
               </div>
-            </details>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
