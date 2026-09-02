@@ -111,4 +111,4 @@ This boilerplate is engineered for seamless deployment on static hosting provide
 
 ## License
 
-This project is open-source software licensed under the [MIT License](https://www.google.com/search?q=LICENSE).
+This project is open-source software licensed under the [MIT License](https://opensource.org/license/mit).
