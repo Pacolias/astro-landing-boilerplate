@@ -7,6 +7,37 @@
 
 A minimal, highly optimized starter template for building static landing pages and small business websites. It combines the performance of Astro's island architecture with React components and Tailwind CSS styling.
 
+## Preview
+
+<div align="center">
+  <table>
+    <tr>
+      <td align="center"><b>Light Mode </b></td>
+      <td align="center"><b>Dark Mode </b></td>
+    </tr>
+    <tr>
+      <td><img src="https://github.com/user-attachments/assets/98516cbd-7a0a-4e2f-b2de-6a769d2789b8" alt="RedCheck Landing Page Showcase" width="450"/></td>
+      <td><img src="https://github.com/user-attachments/assets/c5c36ca4-b9bf-4318-8c75-13194e2ed517" alt="RedCheck Platform Showcase" width="450"/></td>
+    </tr>
+  </table>
+</div>
+
+## Interactive Features Showcase
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/1da24e1e-0b8d-446e-879d-77523de9c2e2" alt="Interactive Booking Flow Showcase" width="700"/>
+  <p><em>Dynamic booking calendar slot selection and confirmation workflow.</em></p>
+</div>
+
+## Core Features
+
+* **Advanced Theme Management**: Built-in script execution in the document head that evaluates operating system preferences (`prefers-color-scheme`) and `localStorage` persistence before initial render, preventing layout flashes (FOUC) and fully synchronizing with Astro View Transitions (`astro:after-swap`).
+* **Interactive Components**: Features a dynamic booking calendar with slot availability and confirmation flows, accordion-based FAQs, and reactive contact forms with submission states.
+* **Optimized Navigation UX**: Legal documents (Terms, Privacy, Cookies) and external social links open securely in new tabs (`target="_blank"`), equipped with utility scripts to close secondary auxiliary tabs gracefully (`window.close()`).
+* **High-Contrast Design System**: Standardized visual hierarchy using `slate-100` backgrounds in light mode and `slate-950` in dark mode to guarantee optimal contrast against white and neutral structural elements.
+* **Modular Architecture**: Clean separation between static Astro wrappers, interactive React islands, and centralized configuration cores.
+
+
 ## Tech Stack
 
 * **Framework:** [Astro](https://astro.build/) for static site generation and island hydration.
@@ -20,16 +51,18 @@ A minimal, highly optimized starter template for building static landing pages a
 src/
 ├── components/
 │   ├── layout/         # Structural wrappers (Navbar, Footer)
-│   ├── sections/       # Landing page blocks (Hero, LogoTicker, About, Services, Testimonials, FAQ, Pricing, Location, ContactForm)
-│   └── ui/             # Reusable primitives (Button, Card, SectionHeading, TestimonialCard, WhatsAppButton, ScrollReveal)
-├── hooks/              # Custom React hooks (useScrollReveal)
+│   ├── sections/       # Landing page blocks (Hero, Services, Benefits, Testimonials, Location, FAQ, ContactForm, BookingCalendar)
+│   └── ui/             # Reusable primitives (SectionHeading, TestimonialCard, WhatsAppButton)
 ├── layouts/
-│   └── Layout.astro    # Global HTML shell and SEO metadata container
+│   └── Layout.astro    # Global HTML shell, SEO metadata, and theme sync script
 ├── pages/
-│   ├── index.astro     # Main application entry point
-│   └── booking.astro   # Dedicated scheduling page route
+│   ├── index.astro     # Main landing page entry point
+│   ├── booking.astro   # Dedicated scheduling route
+│   ├── terms.astro     # Terms of service page
+│   ├── privacy.astro   # Privacy policy page
+│   └── cookies.astro   # Cookie policy page
 ├── styles/
-│   └── global.css      # Tailwind base declarations
+│   └── global.css      # Tailwind base declarations and custom utilities
 └── config.ts           # Centralized client configuration core
 ```
 
