@@ -2,6 +2,9 @@ import React from 'react';
 import { SITE_CONFIG } from '../../config.ts';
 import * as Lucide from 'lucide-react';
 
+// Constante para gestionar la ruta base en GitHub Pages vs Local
+const BASE_URL = import.meta.env.BASE_URL;
+
 export const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   const [isDark, setIsDark] = React.useState(false);
@@ -24,11 +27,11 @@ export const Navbar: React.FC = () => {
   };
 
   const navLinks = [
-    { name: 'ABOUT', href: '/#about' },
-    { name: 'SERVICES', href: '/#services' },
-    { name: 'PRICING', href: '/#pricing' },
-    { name: 'REVIEWS', href: '/#testimonials' },
-    { name: 'LOCATION', href: '/#location' },
+    { name: 'ABOUT', href: `${BASE_URL}#about` },
+    { name: 'SERVICES', href: `${BASE_URL}#services` },
+    { name: 'PRICING', href: `${BASE_URL}#pricing` },
+    { name: 'REVIEWS', href: `${BASE_URL}#testimonials` },
+    { name: 'LOCATION', href: `${BASE_URL}#location` },
   ];
 
   return (
@@ -36,7 +39,8 @@ export const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           
-          <a href="/" className="flex items-center gap-2 flex-shrink-0 group focus:outline-none">
+          {/* Logo actualizado con BASE_URL */}
+          <a href={BASE_URL} className="flex items-center gap-2 flex-shrink-0 group focus:outline-none">
             {SITE_CONFIG.showLogo && (
               <div className="w-8 h-8 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-lg flex items-center justify-center transition-all duration-300 group-hover:scale-105">
                 <Lucide.Hexagon className="w-5 h-5" />
@@ -58,6 +62,7 @@ export const Navbar: React.FC = () => {
               </a>
             ))}
 
+            {/* Asegúrate de que SITE_CONFIG.cta.href en config.ts no empiece por '/' puro si lleva a otra página */}
             <a
               href={SITE_CONFIG.cta.href}
               className="font-bold uppercase text-xs bg-blue-600 duration-200 hover:bg-blue-500 hover:scale-105 px-4 py-2 rounded-full text-white text-center tracking-widest transition-all inline-block shadow-sm"
