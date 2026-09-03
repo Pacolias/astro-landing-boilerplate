@@ -85,17 +85,17 @@ export const Footer: React.FC = () => {
             <h4 className="text-slate-900 dark:text-white font-semibold mb-4">Legal</h4>
             <ul className="space-y-2 text-sm text-slate-500 dark:text-slate-400 text-center">
               <li>
-                <a href={`${BASE_URL}terms`} target="_blank" rel="noopener noreferrer" className="hover:text-slate-900 dark:hover:text-white transition-colors">
+                <a href={`${BASE_URL}terms/`} target="_blank" rel="noopener noreferrer" className="hover:text-slate-900 dark:hover:text-white transition-colors">
                   Terms
                 </a>
               </li>
               <li>
-                <a href={`${BASE_URL}privacy`} target="_blank" rel="noopener noreferrer" className="hover:text-slate-900 dark:hover:text-white transition-colors">
+                <a href={`${BASE_URL}privacy/`} target="_blank" rel="noopener noreferrer" className="hover:text-slate-900 dark:hover:text-white transition-colors">
                   Privacy
                 </a>
               </li>
               <li>
-                <a href={`${BASE_URL}cookies`} target="_blank" rel="noopener noreferrer" className="hover:text-slate-900 dark:hover:text-white transition-colors">
+                <a href={`${BASE_URL}cookies/`} target="_blank" rel="noopener noreferrer" className="hover:text-slate-900 dark:hover:text-white transition-colors">
                   Cookies
                 </a>
               </li>
