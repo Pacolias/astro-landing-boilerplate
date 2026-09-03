@@ -3,6 +3,7 @@ import { SITE_CONFIG } from '../../config.ts';
 import * as Lucide from 'lucide-react';
 
 const BASE_URL = import.meta.env.BASE_URL;
+const SAFE_BASE = BASE_URL.endsWith('/') ? BASE_URL : `${BASE_URL}/`;
 
 const InstagramIcon: React.FC<{ className?: string }> = ({ className }) => (
   <svg className={className} fill="currentColor" viewBox="0 0 24 24">
@@ -85,17 +86,17 @@ export const Footer: React.FC = () => {
             <h4 className="text-slate-900 dark:text-white font-semibold mb-4">Legal</h4>
             <ul className="space-y-2 text-sm text-slate-500 dark:text-slate-400 text-center">
               <li>
-                <a href={`${BASE_URL}terms/`} target="_blank" rel="noopener noreferrer" className="hover:text-slate-900 dark:hover:text-white transition-colors">
+                <a href={`${SAFE_BASE}terms/`} target="_blank" rel="noopener noreferrer" className="hover:text-slate-900 dark:hover:text-white transition-colors">
                   Terms
                 </a>
               </li>
               <li>
-                <a href={`${BASE_URL}privacy/`} target="_blank" rel="noopener noreferrer" className="hover:text-slate-900 dark:hover:text-white transition-colors">
+                <a href={`${SAFE_BASE}privacy/`} target="_blank" rel="noopener noreferrer" className="hover:text-slate-900 dark:hover:text-white transition-colors">
                   Privacy
                 </a>
               </li>
               <li>
-                <a href={`${BASE_URL}cookies/`} target="_blank" rel="noopener noreferrer" className="hover:text-slate-900 dark:hover:text-white transition-colors">
+                <a href={`${SAFE_BASE}cookies/`} target="_blank" rel="noopener noreferrer" className="hover:text-slate-900 dark:hover:text-white transition-colors">
                   Cookies
                 </a>
               </li>

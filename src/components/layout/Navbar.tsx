@@ -3,6 +3,7 @@ import { SITE_CONFIG } from '../../config.ts';
 import * as Lucide from 'lucide-react';
 
 const BASE_URL = import.meta.env.BASE_URL;
+const SAFE_BASE = BASE_URL.endsWith('/') ? BASE_URL : `${BASE_URL}/`;
 
 export const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -33,18 +34,26 @@ export const Navbar: React.FC = () => {
     { name: 'LOCATION', hash: '#location' },
   ];
 
-  // Corrige la ruta del botón Booking añadiendo BASE_URL y la barra final (/)
-  const ctaHref = SITE_CONFIG.cta.href.startsWith('/') 
-    ? `${BASE_URL}${SITE_CONFIG.cta.href.slice(1)}/` 
-    : SITE_CONFIG.cta.href;
+  let ctaHref = SITE_CONFIG.cta.href;
+  if (!ctaHref.startsWith('http')) {
+    const cleanPath = ctaHref.startsWith('/') ? ctaHref.slice(1) : ctaHref;
+    ctaHref = `${SAFE_BASE}${cleanPath}/`;
+  }
 
-  // Intercepta el clic en los enlaces del menú para hacer scroll sin recargar
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, hash: string) => {
-    if (window.location.pathname === BASE_URL || window.location.pathname === BASE_URL.slice(0, -1)) {
+    const isHomePage = 
+      window.location.pathname === BASE_URL || 
+      window.location.pathname === SAFE_BASE ||
+      window.location.pathname.endsWith('index.html');
+
+    if (isHomePage) {
       e.preventDefault();
+      
       const element = document.querySelector(hash);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
+        
+        window.history.pushState(null, '', `${SAFE_BASE}${hash}`);
         setIsOpen(false);
       }
     }
@@ -55,7 +64,7 @@ export const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           
-          <a href={BASE_URL} className="flex items-center gap-2 flex-shrink-0 group focus:outline-none">
+          <a href={SAFE_BASE} className="flex items-center gap-2 flex-shrink-0 group focus:outline-none">
             {SITE_CONFIG.showLogo && (
               <div className="w-8 h-8 bg-slate-900 dark:bg-white text-white dark:text-slate-900 rounded-lg flex items-center justify-center transition-all duration-300 group-hover:scale-105">
                 <Lucide.Hexagon className="w-5 h-5" />
@@ -70,7 +79,7 @@ export const Navbar: React.FC = () => {
             {navLinks.map((link) => (
               <a 
                 key={link.name} 
-                href={`${BASE_URL}${link.hash}`}
+                href={`${SAFE_BASE}${link.hash}`}
                 onClick={(e) => handleNavClick(e, link.hash)}
                 className="relative text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors font-medium text-sm tracking-wide uppercase after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-0 hover:after:w-full after:h-0.5 after:bg-blue-600 after:transition-all after:duration-300"
               >
@@ -120,7 +129,7 @@ export const Navbar: React.FC = () => {
             {navLinks.map((link) => (
               <a
                 key={link.name}
-                href={`${BASE_URL}${link.hash}`}
+                href={`${SAFE_BASE}${link.hash}`}
                 onClick={(e) => handleNavClick(e, link.hash)}
                 className="block px-3 py-2 text-base font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-slate-900 rounded-md"
               >
