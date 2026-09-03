@@ -1,5 +1,9 @@
 import React from 'react';
 import * as Lucide from 'lucide-react';
+import { SITE_CONFIG } from '../../config.ts';
+
+const BASE_URL = import.meta.env.BASE_URL;
+const SAFE_BASE = BASE_URL.endsWith('/') ? BASE_URL : `${BASE_URL}/`;
 
 export const Hero: React.FC = () => {
   const scrollToSection = (id: string) => {
@@ -35,6 +39,13 @@ export const Hero: React.FC = () => {
       );
     });
 
+  // Aplica la misma lógica segura para el enlace de Booking
+  let ctaHref = SITE_CONFIG.cta.href;
+  if (!ctaHref.startsWith('http')) {
+    const cleanPath = ctaHref.startsWith('/') ? ctaHref.slice(1) : ctaHref;
+    ctaHref = `${SAFE_BASE}${cleanPath}/`;
+  }
+
   return (
     <section 
       className="relative min-h-[calc(100vh-4rem)] flex flex-col justify-between bg-cover bg-center overflow-hidden transition-colors border-b border-slate-200 dark:border-slate-900"
@@ -56,10 +67,10 @@ export const Hero: React.FC = () => {
         
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
           <a 
-            href="/booking"
+            href={ctaHref}
             className="items-center gap-3 inline-flex bg-blue-600 duration-200 font-bold hover:bg-blue-500 hover:gap-5 no-underline px-8 py-4 rounded-full text-white text-sm tracking-widest transition-all uppercase shadow-lg shadow-blue-500/25"
           >
-            Booking
+            {SITE_CONFIG.cta.text}
             <Lucide.ArrowRight className="w-5 h-5" />
           </a>
           
