@@ -25,14 +25,14 @@ export const Location: React.FC = () => {
   };
 
   return (
-    <section id="location" className="min-h-[calc(100svh-4rem)] flex flex-col justify-center py-10 md:min-h-0 md:block md:py-24 bg-slate-100 dark:bg-slate-950 transition-colors border-b border-slate-200 dark:border-slate-800">
+    <section id="location" className="py-12 md:py-24 bg-slate-100 dark:bg-slate-950 transition-colors border-b border-slate-200 dark:border-slate-800">
       {/* Invisible Schema injection for search engines */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center">
 
           <div className="space-y-4 md:space-y-8">
@@ -53,7 +53,7 @@ export const Location: React.FC = () => {
                 <div>
                   <h3 className="text-sm md:text-base font-bold text-slate-900 dark:text-white">Address</h3>
                   <p className="text-sm md:text-base text-slate-600 dark:text-slate-400 mt-0.5 md:mt-1">{SITE_CONFIG.address}</p>
-                  <p className="hidden md:block text-slate-500 dark:text-slate-500 text-sm mt-1">33101 Miami, FL, United States</p>
+                  <p className="text-slate-500 dark:text-slate-500 text-xs md:text-sm mt-0.5 md:mt-1">33101 Miami, FL, United States</p>
                 </div>
               </div>
 
@@ -64,7 +64,7 @@ export const Location: React.FC = () => {
                 <div>
                   <h3 className="text-sm md:text-base font-bold text-slate-900 dark:text-white">Business Hours</h3>
                   <p className="text-sm md:text-base text-slate-600 dark:text-slate-400 mt-0.5 md:mt-1">Mon - Fri: 09:00 AM - 06:00 PM</p>
-                  <p className="hidden md:block text-slate-500 dark:text-slate-500 text-sm mt-1">Saturday and Sunday: Closed</p>
+                  <p className="text-slate-500 dark:text-slate-500 text-xs md:text-sm mt-0.5 md:mt-1">Saturday and Sunday: Closed</p>
                 </div>
               </div>
 
@@ -75,23 +75,13 @@ export const Location: React.FC = () => {
                 <div>
                   <h3 className="text-sm md:text-base font-bold text-slate-900 dark:text-white">Contact</h3>
                   <p className="text-sm md:text-base text-slate-600 dark:text-slate-400 mt-0.5 md:mt-1">{SITE_CONFIG.contactPhone}</p>
-                  <p className="hidden md:block text-slate-600 dark:text-slate-400">{SITE_CONFIG.contactEmail}</p>
+                  <p className="text-sm md:text-base text-slate-600 dark:text-slate-400">{SITE_CONFIG.contactEmail}</p>
                 </div>
               </div>
             </div>
-
-            <a
-              href="https://maps.google.com/maps?q=Miami,%20FL,%20USA"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="md:hidden inline-flex items-center gap-2 text-sm font-bold text-blue-600 dark:text-blue-400"
-            >
-              <Lucide.Map className="w-4 h-4" />
-              Open in Google Maps
-            </a>
           </div>
 
-          <div className="hidden md:block w-full h-full min-h-[400px] rounded-3xl overflow-hidden shadow-xl shadow-slate-900/5 dark:shadow-none border border-slate-200/80 dark:border-slate-800 relative bg-slate-200 dark:bg-slate-800">
+          <div className="w-full h-full min-h-[260px] md:min-h-[400px] rounded-3xl overflow-hidden shadow-xl shadow-slate-900/5 dark:shadow-none border border-slate-200/80 dark:border-slate-800 relative bg-slate-200 dark:bg-slate-800">
             <iframe
               src="https://maps.google.com/maps?q=Miami,%20FL,%20USA&t=&z=12&ie=UTF8&iwloc=&output=embed"
               width="100%"

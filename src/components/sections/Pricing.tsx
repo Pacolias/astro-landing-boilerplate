@@ -54,8 +54,8 @@ export const Pricing: React.FC = () => {
   ];
 
   return (
-    <section id="pricing" className="min-h-[calc(100svh-4rem)] flex flex-col justify-center py-10 md:min-h-0 md:block md:py-20 bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 transition-colors">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+    <section id="pricing" className="py-14 md:py-20 bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 transition-colors">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           title="Transparent Pricing"
           subtitle="Choose the perfect package for your business. No hidden fees, just predictable, high-quality development."

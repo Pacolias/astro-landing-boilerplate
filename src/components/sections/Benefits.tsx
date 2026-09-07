@@ -21,8 +21,8 @@ export const Benefits: React.FC = () => {
   ];
 
   return (
-    <section className="min-h-[calc(100svh-4rem)] flex flex-col justify-center py-10 md:min-h-0 md:block md:py-24 bg-white dark:bg-slate-900 transition-colors border-b border-slate-200/60 dark:border-slate-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+    <section className="py-14 md:py-24 bg-white dark:bg-slate-900 transition-colors border-b border-slate-200/60 dark:border-slate-800">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-6 md:mb-16">
           <h2 className="text-2xl font-extrabold text-slate-900 dark:text-white sm:text-3xl md:text-4xl">
             Why choose us?
