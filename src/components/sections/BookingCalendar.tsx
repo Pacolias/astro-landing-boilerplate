@@ -169,7 +169,7 @@ export const BookingCalendar: React.FC = () => {
           <span>S</span>
         </div>
 
-        <div className="relative overflow-hidden" aria-live="polite" aria-busy={monthLoading}>
+        <div className="relative" aria-live="polite" aria-busy={monthLoading}>
           {/* Skeleton shown while "loading" the new month */}
           <div
             className={`grid grid-cols-7 gap-x-1 gap-y-1 sm:gap-x-3 sm:gap-y-3 transition-opacity duration-200 ${
@@ -191,7 +191,7 @@ export const BookingCalendar: React.FC = () => {
             key={monthOffset}
             className={`grid grid-cols-7 gap-x-1 gap-y-1 sm:gap-x-3 sm:gap-y-3 text-center text-sm font-medium transition-all duration-300 ease-out ${
               monthLoading
-                ? 'opacity-0 pointer-events-none'
+                ? 'opacity-0 absolute inset-0 pointer-events-none'
                 : `opacity-100 ${slideDir === 'left' ? 'animate-[slide-in-left_0.35s_ease-out]' : 'animate-[slide-in-right_0.35s_ease-out]'}`
             }`}
           >
