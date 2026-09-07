@@ -48,7 +48,7 @@ export const Hero: React.FC = () => {
 
   return (
     <section
-      className="relative min-h-[calc(100dvh-4rem)] flex flex-col justify-between bg-cover bg-center overflow-hidden transition-colors border-b border-slate-200 dark:border-slate-900"
+      className="relative min-h-[calc(100svh-4rem)] flex flex-col justify-between bg-cover bg-center overflow-hidden transition-colors border-b border-slate-200 dark:border-slate-900"
       style={{ backgroundImage: "url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=2000&q=80')" }}
     >
       {/* Gradient overlay using slate-100 for a richer, more defined contrast in light mode */}
