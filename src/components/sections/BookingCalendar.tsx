@@ -30,12 +30,12 @@ export const BookingCalendar: React.FC = () => {
   };
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+    <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-8 items-start">
       {/* Left Column: Calendar Grid */}
-      <div className="lg:col-span-7 bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl p-8 rounded-3xl border border-slate-200/80 dark:border-slate-800 shadow-2xl shadow-slate-900/5 dark:shadow-none transition-all">
-        <div className="flex items-center justify-between mb-8 pb-4 border-b border-slate-100 dark:border-slate-800/80">
+      <div className="lg:col-span-7 bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl p-4 sm:p-6 lg:p-8 rounded-2xl sm:rounded-3xl border border-slate-200/80 dark:border-slate-800 shadow-2xl shadow-slate-900/5 dark:shadow-none transition-all">
+        <div className="flex items-center justify-between mb-6 sm:mb-8 pb-4 border-b border-slate-100 dark:border-slate-800/80">
           <div>
-            <h2 className="text-xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2 tracking-tight">
+            <h2 className="text-lg sm:text-xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2 tracking-tight">
               September 2026
               <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400">
                 <Lucide.ChevronDown className="w-3.5 h-3.5" />
@@ -53,7 +53,7 @@ export const BookingCalendar: React.FC = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-7 text-center text-xs font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-4">
+        <div className="grid grid-cols-7 gap-x-1 sm:gap-x-3 text-center text-xs font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-4">
           <span>M</span>
           <span>T</span>
           <span>W</span>
@@ -63,7 +63,7 @@ export const BookingCalendar: React.FC = () => {
           <span>S</span>
         </div>
 
-        <div className="grid grid-cols-7 gap-x-3 gap-y-3 text-center text-sm font-medium">
+        <div className="grid grid-cols-7 gap-x-1 gap-y-1 sm:gap-x-3 sm:gap-y-3 text-center text-sm font-medium">
           {emptyDays.map((_, index) => (
             <div key={`empty-${index}`} />
           ))}
@@ -81,7 +81,7 @@ export const BookingCalendar: React.FC = () => {
                   setPendingTime(null);
                   setIsConfirmed(false);
                 }}
-                className={`relative mx-auto w-11 h-11 rounded-2xl flex items-center justify-center transition-all duration-300 focus:outline-none ${
+                className={`relative mx-auto w-full max-w-11 aspect-square rounded-xl sm:rounded-2xl flex items-center justify-center text-xs sm:text-sm transition-all duration-300 focus:outline-none ${
                   isSelected
                     ? 'bg-blue-600 text-white font-bold shadow-lg shadow-blue-500/30 scale-105 ring-4 ring-blue-600/20 z-10'
                     : hasAvailability
@@ -100,7 +100,7 @@ export const BookingCalendar: React.FC = () => {
       </div>
 
       {/* Right Column: Available Times / Confirmation / Success */}
-      <div className="lg:col-span-5 bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl p-8 rounded-3xl border border-slate-200/80 dark:border-slate-800 shadow-2xl shadow-slate-900/5 dark:shadow-none">
+      <div className="lg:col-span-5 bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl p-4 sm:p-6 lg:p-8 rounded-2xl sm:rounded-3xl border border-slate-200/80 dark:border-slate-800 shadow-2xl shadow-slate-900/5 dark:shadow-none">
         <div className="flex items-center justify-between mb-6 pb-4 border-b border-slate-100 dark:border-slate-800/80 gap-4">
           <div className="transition-all duration-300">
             <h3 className="text-base sm:text-lg font-extrabold text-slate-900 dark:text-white tracking-tight">
@@ -170,7 +170,7 @@ export const BookingCalendar: React.FC = () => {
 
           <div className={`transition-all duration-300 ease-in-out ${!pendingTime && !isConfirmed ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform -translate-y-4 absolute inset-0 pointer-events-none'}`}>
             {!pendingTime && !isConfirmed && (
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid grid-cols-2 gap-2 sm:gap-3">
                 {availableTimes.map((time) => (
                   <button
                     key={time}

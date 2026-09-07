@@ -53,7 +53,7 @@ const {
       document.addEventListener('astro:after-swap', applyTheme);
     </script>
   </head>
-  <body class="min-h-screen flex flex-col bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans antialiased selection:bg-blue-200">
+  <body class="min-h-screen flex flex-col overflow-x-hidden bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans antialiased selection:bg-blue-200">
     <Navbar client:load transition:persist="navbar" />
     
     <main class="flex-grow">

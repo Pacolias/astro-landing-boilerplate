@@ -47,9 +47,9 @@ export const Testimonials: React.FC = () => {
         />
         
         <div className="relative mt-12 max-w-[95%] mx-auto">
-          <button 
+          <button
             onClick={() => scroll('left')}
-            className="absolute -left-4 sm:-left-6 top-1/2 -translate-y-1/2 z-10 w-12 h-12 flex items-center justify-center rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-md text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-all focus:outline-none"
+            className="hidden sm:flex absolute -left-4 sm:-left-6 top-1/2 -translate-y-1/2 z-10 w-12 h-12 items-center justify-center rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-md text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-all focus:outline-none"
             aria-label="Previous testimonial"
           >
             <Lucide.ChevronLeft className="w-7 h-7" />
@@ -73,9 +73,9 @@ export const Testimonials: React.FC = () => {
             ))}
           </div>
 
-          <button 
+          <button
             onClick={() => scroll('right')}
-            className="absolute -right-4 sm:-right-6 top-1/2 -translate-y-1/2 z-10 w-12 h-12 flex items-center justify-center rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-md text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-all focus:outline-none"
+            className="hidden sm:flex absolute -right-4 sm:-right-6 top-1/2 -translate-y-1/2 z-10 w-12 h-12 items-center justify-center rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-md text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-all focus:outline-none"
             aria-label="Next testimonial"
           >
             <Lucide.ChevronRight className="w-7 h-7" />
