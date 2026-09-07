@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { Hero } from '../components/sections/Hero';
+import { Hero, HERO_IMAGE_URL } from '../components/sections/Hero';
 import { LogoTicker } from '../components/sections/LogoTicker';
 import { About } from '../components/sections/About';
 import { Services } from '../components/sections/Services';
@@ -14,6 +14,10 @@ import { ScrollReveal } from '../components/ui/ScrollReveal';
 ---
 
 <Layout>
+  <Fragment slot="head">
+    <link rel="preload" as="image" href={HERO_IMAGE_URL} fetchpriority="high" />
+  </Fragment>
+
   <Hero client:load />
   <!-- <LogoTicker /> -->
 

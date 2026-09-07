@@ -5,6 +5,8 @@ import { SITE_CONFIG } from '../../config.ts';
 const BASE_URL = import.meta.env.BASE_URL;
 const SAFE_BASE = BASE_URL.endsWith('/') ? BASE_URL : `${BASE_URL}/`;
 
+export const HERO_IMAGE_URL = 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=70';
+
 export const Hero: React.FC = () => {
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -49,7 +51,7 @@ export const Hero: React.FC = () => {
   return (
     <section
       className="relative min-h-[calc(100svh-4rem)] flex flex-col justify-between bg-cover bg-center overflow-hidden transition-colors border-b border-slate-200 dark:border-slate-900"
-      style={{ backgroundImage: "url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=2000&q=80')" }}
+      style={{ backgroundImage: `url('${HERO_IMAGE_URL}')` }}
     >
       {/* Gradient overlay using slate-100 for a richer, more defined contrast in light mode */}
       <div className="absolute inset-0 bg-gradient-to-b from-slate-100/90 via-slate-100/95 to-slate-100 dark:from-slate-950/90 dark:via-slate-950/85 dark:to-slate-950/95 transition-colors"></div>
