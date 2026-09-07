@@ -112,10 +112,11 @@ export const Navbar: React.FC = () => {
               {isDark ? <Lucide.SunMedium className="w-4 h-4" /> : <Lucide.MoonStar className="w-4 h-4" />}
             </button>
 
-            <button 
+            <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white focus:outline-none"
               aria-label="Toggle menu"
+              aria-expanded={isOpen}
             >
               {isOpen ? <Lucide.X className="h-6 w-6" /> : <Lucide.Menu className="h-6 w-6" />}
             </button>
@@ -123,29 +124,39 @@ export const Navbar: React.FC = () => {
         </div>
       </div>
 
-      {isOpen && (
-        <div className="md:hidden bg-slate-100 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-900 transition-colors">
-          <div className="px-4 pt-3 pb-4 space-y-2">
-            {navLinks.map((link) => (
+      <div
+        className={`md:hidden grid overflow-hidden transition-[grid-template-rows] duration-300 ease-in-out ${
+          isOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
+        }`}
+      >
+        <div className="min-h-0">
+          <div
+            className={`bg-slate-100 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-900 transition-opacity duration-300 ease-in-out ${
+              isOpen ? 'opacity-100' : 'opacity-0'
+            }`}
+          >
+            <div className="px-4 pt-3 pb-4 space-y-2">
+              {navLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={`${SAFE_BASE}${link.hash}`}
+                  onClick={(e) => handleNavClick(e, link.hash)}
+                  className="block px-3 py-2 text-base font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-slate-900 rounded-md"
+                >
+                  {link.name}
+                </a>
+              ))}
               <a
-                key={link.name}
-                href={`${SAFE_BASE}${link.hash}`}
-                onClick={(e) => handleNavClick(e, link.hash)}
-                className="block px-3 py-2 text-base font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-slate-900 rounded-md"
+                href={ctaHref}
+                onClick={() => setIsOpen(false)}
+                className="block font-bold uppercase text-xs bg-blue-600 duration-200 hover:bg-blue-500 hover:scale-[1.02] px-4 py-2.5 rounded-full text-white text-center tracking-widest transition-all mt-4 mx-2"
               >
-                {link.name}
+                {SITE_CONFIG.cta.text}
               </a>
-            ))}
-            <a
-              href={ctaHref}
-              onClick={() => setIsOpen(false)}
-              className="block font-bold uppercase text-xs bg-blue-600 duration-200 hover:bg-blue-500 hover:scale-[1.02] px-4 py-2.5 rounded-full text-white text-center tracking-widest transition-all mt-4 mx-2"
-            >
-              {SITE_CONFIG.cta.text}
-            </a>
+            </div>
           </div>
         </div>
-      )}
+      </div>
     </header>
   );
 };
