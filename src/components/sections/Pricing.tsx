@@ -54,21 +54,21 @@ export const Pricing: React.FC = () => {
   ];
 
   return (
-    <section id="pricing" className="py-20 bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 transition-colors">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeading 
-          title="Transparent Pricing" 
+    <section id="pricing" className="min-h-[calc(100svh-4rem)] flex flex-col justify-center py-10 md:min-h-0 md:block md:py-20 bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 transition-colors">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <SectionHeading
+          title="Transparent Pricing"
           subtitle="Choose the perfect package for your business. No hidden fees, just predictable, high-quality development."
           centered={true}
         />
-        
-        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+
+        <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 -mx-4 sm:-mx-6 px-4 sm:px-6 pb-1 mt-6 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] md:grid md:grid-cols-3 md:gap-8 md:mt-16 md:mx-0 md:px-0 md:pb-0 md:overflow-visible md:snap-none md:items-stretch">
           {plans.map((plan, index) => (
-            <div 
+            <div
               key={index}
-              className={`relative flex flex-col p-8 rounded-2xl border transition-colors ${
-                plan.isPopular 
-                  ? 'border-2 border-blue-600 dark:border-blue-500 bg-white dark:bg-slate-950 text-slate-900 dark:text-white shadow-xl md:-translate-y-4' 
+              className={`snap-center shrink-0 w-[82vw] sm:w-[60vw] md:w-auto md:shrink relative flex flex-col p-5 md:p-8 rounded-2xl border transition-colors ${
+                plan.isPopular
+                  ? 'border-2 border-blue-600 dark:border-blue-500 bg-white dark:bg-slate-950 text-slate-900 dark:text-white shadow-xl md:-translate-y-4'
                   : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 shadow-sm'
               }`}
             >
@@ -79,19 +79,19 @@ export const Pricing: React.FC = () => {
                   </span>
                 </div>
               )}
-              
-              <div className="mb-8">
-                <h3 className="text-xl font-bold mb-2 text-slate-900 dark:text-white">
+
+              <div className="mb-4 md:mb-8">
+                <h3 className="text-lg md:text-xl font-bold mb-1 md:mb-2 text-slate-900 dark:text-white">
                   {plan.name}
                 </h3>
-                <p className="text-sm leading-relaxed h-10 text-slate-500 dark:text-slate-400">
+                <p className="text-sm leading-relaxed md:h-10 text-slate-500 dark:text-slate-400">
                   {plan.description}
                 </p>
               </div>
-              
-              <div className="mb-8">
+
+              <div className="mb-4 md:mb-8">
                 <div className="flex items-baseline gap-1">
-                  <span className="text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">{plan.price}</span>
+                  <span className="text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">{plan.price}</span>
                   {plan.period !== 'tailored' && (
                     <span className="text-sm font-medium text-slate-500 dark:text-slate-400">
                       / {plan.period}
@@ -99,8 +99,8 @@ export const Pricing: React.FC = () => {
                   )}
                 </div>
               </div>
-              
-              <ul className="mb-8 space-y-4 flex-grow">
+
+              <ul className="mb-4 md:mb-8 space-y-2 md:space-y-4 flex-grow">
                 {plan.features.map((feature, fIndex) => (
                   <li key={fIndex} className="flex items-start gap-3">
                     <Lucide.Check className={`w-5 h-5 shrink-0 ${plan.isPopular ? 'text-blue-600 dark:text-blue-400' : 'text-slate-400 dark:text-slate-500'}`} />
@@ -110,10 +110,10 @@ export const Pricing: React.FC = () => {
                   </li>
                 ))}
               </ul>
-              
-              <a 
-                href="#contact" 
-                className={`block w-full py-3.5 px-6 rounded-full font-bold text-xs uppercase tracking-widest text-center transition-all duration-200 shadow-sm ${
+
+              <a
+                href="#contact"
+                className={`block w-full py-3 md:py-3.5 px-6 rounded-full font-bold text-xs uppercase tracking-widest text-center transition-all duration-200 shadow-sm ${
                   plan.isPopular
                     ? 'bg-blue-600 hover:bg-blue-500 text-white shadow-lg shadow-blue-500/25'
                     : 'bg-slate-900 dark:bg-slate-800 text-white hover:bg-slate-800 dark:hover:bg-slate-700'

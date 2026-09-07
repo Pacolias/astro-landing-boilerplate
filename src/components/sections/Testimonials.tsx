@@ -38,15 +38,15 @@ export const Testimonials: React.FC = () => {
   };
 
   return (
-    <section id="testimonials" className="py-20 bg-slate-100 dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 overflow-hidden transition-colors">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeading 
-          title="What Our Clients Say" 
+    <section id="testimonials" className="min-h-[calc(100svh-4rem)] flex flex-col justify-center py-10 md:min-h-0 md:block md:py-20 bg-slate-100 dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 overflow-hidden transition-colors">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <SectionHeading
+          title="What Our Clients Say"
           subtitle="Don't just take our word for it. Read how we have helped businesses scale and succeed."
           centered={true}
         />
-        
-        <div className="relative mt-12 max-w-[95%] mx-auto">
+
+        <div className="relative mt-6 md:mt-12 max-w-[95%] mx-auto">
           <button
             onClick={() => scroll('left')}
             className="hidden sm:flex absolute -left-4 sm:-left-6 top-1/2 -translate-y-1/2 z-10 w-12 h-12 items-center justify-center rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-md text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-all focus:outline-none"

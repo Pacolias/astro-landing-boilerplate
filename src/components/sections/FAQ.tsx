@@ -29,39 +29,39 @@ export const FAQ: React.FC = () => {
   ];
 
   return (
-    <section id="faq" className="py-20 bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 transition-colors">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeading 
-          title="Frequently Asked Questions" 
+    <section id="faq" className="min-h-[calc(100svh-4rem)] flex flex-col justify-center py-10 md:min-h-0 md:block md:py-20 bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 transition-colors">
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <SectionHeading
+          title="Frequently Asked Questions"
           subtitle="Find answers to common questions about our process, pricing, and services."
           centered={true}
         />
-        
-        <div className="mt-12 space-y-4">
+
+        <div className="mt-6 md:mt-12 space-y-3 md:space-y-4">
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
-            
+
             return (
-              <div 
-                key={index} 
-                className="bg-slate-100 dark:bg-slate-950 p-6 rounded-xl shadow-sm border border-slate-200/80 dark:border-slate-800 transition-colors"
+              <div
+                key={index}
+                className="bg-slate-100 dark:bg-slate-950 p-4 md:p-6 rounded-xl shadow-sm border border-slate-200/80 dark:border-slate-800 transition-colors"
               >
                 <button 
                   onClick={() => toggleFAQ(index)}
-                  className="w-full flex justify-between items-center font-semibold cursor-pointer text-slate-900 dark:text-white text-left focus:outline-none"
+                  className="w-full flex justify-between items-center text-sm md:text-base font-semibold cursor-pointer text-slate-900 dark:text-white text-left focus:outline-none"
                 >
                   <span className="pr-4">{faq.question}</span>
                   <span className={`transform transition-transform duration-300 ease-in-out flex-shrink-0 ${isOpen ? 'rotate-180' : ''}`}>
                     <Lucide.ChevronDown className="w-5 h-5 text-slate-400 dark:text-slate-500" />
                   </span>
                 </button>
-                
-                <div 
+
+                <div
                   className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                    isOpen ? 'max-h-96 opacity-100 mt-4' : 'max-h-0 opacity-0 mt-0'
+                    isOpen ? 'max-h-96 opacity-100 mt-3 md:mt-4' : 'max-h-0 opacity-0 mt-0'
                   }`}
                 >
-                  <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
+                  <p className="text-sm md:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
                     {faq.answer}
                   </p>
                 </div>

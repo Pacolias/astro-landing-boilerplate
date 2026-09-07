@@ -22,24 +22,24 @@ export const Services: React.FC = () => {
   ];
 
   return (
-    <section id="services" className="py-20 bg-slate-100 dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 transition-colors">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeading 
-          title="Our Services" 
+    <section id="services" className="min-h-[calc(100svh-4rem)] flex flex-col justify-center py-10 md:min-h-0 md:block md:py-20 bg-slate-100 dark:bg-slate-950 border-b border-slate-200 dark:border-slate-800 transition-colors">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <SectionHeading
+          title="Our Services"
           subtitle="Comprehensive digital solutions tailored to accelerate your growth and maximize conversion."
           centered={true}
         />
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+
+        <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 -mx-4 sm:-mx-6 px-4 sm:px-6 pb-1 mt-6 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] md:grid md:grid-cols-3 md:gap-8 md:mt-12 md:mx-0 md:px-0 md:pb-0 md:overflow-visible md:snap-none">
           {offerings.map((service, index) => (
-            <div 
+            <div
               key={index}
-              className="p-8 bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-200/80 dark:border-slate-800 flex flex-col transition-all hover:-translate-y-1 duration-300"
+              className="snap-center shrink-0 w-[78vw] sm:w-[55vw] md:w-auto md:shrink p-5 md:p-8 bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-200/80 dark:border-slate-800 flex flex-col transition-all md:hover:-translate-y-1 duration-300"
             >
-              <div className="w-12 h-12 rounded-xl bg-blue-50 dark:bg-blue-950/50 flex items-center justify-center mb-6">
+              <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-blue-50 dark:bg-blue-950/50 flex items-center justify-center mb-3 md:mb-6">
                 {service.icon}
               </div>
-              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">
+              <h3 className="text-lg md:text-xl font-bold text-slate-900 dark:text-white mb-2 md:mb-3">
                 {service.title}
               </h3>
               <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm">

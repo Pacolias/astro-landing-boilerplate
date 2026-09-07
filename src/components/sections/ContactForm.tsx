@@ -15,42 +15,42 @@ export const ContactForm: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-slate-100 dark:bg-slate-950 transition-colors border-b border-slate-200 dark:border-slate-900">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-          
+    <section id="contact" className="min-h-[calc(100svh-4rem)] flex flex-col justify-center py-8 md:min-h-0 md:block md:py-24 bg-slate-100 dark:bg-slate-950 transition-colors border-b border-slate-200 dark:border-slate-900">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-16 items-start">
+
           {/* Left Contact Information */}
-          <div className="space-y-8 lg:sticky lg:top-24">
+          <div className="space-y-3 md:space-y-8 lg:sticky lg:top-24">
             <div>
-              <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight sm:text-4xl mb-4">
+              <h2 className="text-xl font-extrabold text-slate-900 dark:text-white tracking-tight md:text-3xl lg:text-4xl mb-1 md:mb-4">
                 Ready to get started?
               </h2>
-              <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
+              <p className="hidden md:block text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
                 Fill out the form and our team will get back to you in less than 24 hours. No strings attached.
               </p>
             </div>
 
-            <div className="space-y-6">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-300 shadow-sm">
-                  <Lucide.Mail className="w-5 h-5" />
+            <div className="flex flex-col sm:flex-row md:flex-col gap-2 md:gap-6">
+              <div className="flex items-center gap-2 md:gap-4">
+                <div className="w-8 h-8 md:w-12 md:h-12 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-300 shadow-sm shrink-0">
+                  <Lucide.Mail className="w-4 h-4 md:w-5 md:h-5" />
                 </div>
                 <div>
-                  <p className="text-sm font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">Email</p>
-                  <a href={`mailto:${SITE_CONFIG.contactEmail}`} className="text-lg font-bold text-slate-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                  <p className="hidden md:block text-sm font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">Email</p>
+                  <a href={`mailto:${SITE_CONFIG.contactEmail}`} className="text-sm md:text-lg font-bold text-slate-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                     {SITE_CONFIG.contactEmail}
                   </a>
                 </div>
               </div>
 
               {SITE_CONFIG.contactPhone && (
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-300 shadow-sm">
-                    <Lucide.Phone className="w-5 h-5" />
+                <div className="flex items-center gap-2 md:gap-4">
+                  <div className="w-8 h-8 md:w-12 md:h-12 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-300 shadow-sm shrink-0">
+                    <Lucide.Phone className="w-4 h-4 md:w-5 md:h-5" />
                   </div>
                   <div>
-                    <p className="text-sm font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">Phone</p>
-                    <a href={`tel:${SITE_CONFIG.contactPhone}`} className="text-lg font-bold text-slate-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                    <p className="hidden md:block text-sm font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">Phone</p>
+                    <a href={`tel:${SITE_CONFIG.contactPhone}`} className="text-sm md:text-lg font-bold text-slate-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                       {SITE_CONFIG.contactPhone}
                     </a>
                   </div>
@@ -60,27 +60,27 @@ export const ContactForm: React.FC = () => {
           </div>
 
           {/* Right Form */}
-          <div className="bg-white dark:bg-slate-900 p-8 sm:p-10 rounded-3xl border border-slate-200/80 dark:border-slate-800 shadow-xl shadow-slate-900/5 dark:shadow-none">
+          <div className="bg-white dark:bg-slate-900 p-4 md:p-10 rounded-2xl md:rounded-3xl border border-slate-200/80 dark:border-slate-800 shadow-xl shadow-slate-900/5 dark:shadow-none">
             {status === 'success' ? (
-              <div className="flex flex-col items-center justify-center text-center h-full min-h-[400px] py-12 space-y-4 animate-in fade-in zoom-in duration-500">
-                <div className="w-16 h-16 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 rounded-full flex items-center justify-center mb-2">
-                  <Lucide.CheckCircle2 className="w-8 h-8" />
+              <div className="flex flex-col items-center justify-center text-center h-full py-6 md:py-12 space-y-2 md:space-y-4 animate-in fade-in zoom-in duration-500">
+                <div className="w-12 h-12 md:w-16 md:h-16 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 rounded-full flex items-center justify-center mb-2">
+                  <Lucide.CheckCircle2 className="w-6 h-6 md:w-8 md:h-8" />
                 </div>
-                <h3 className="text-2xl font-bold text-slate-900 dark:text-white">Message sent!</h3>
-                <p className="text-slate-600 dark:text-slate-400">
+                <h3 className="text-lg md:text-2xl font-bold text-slate-900 dark:text-white">Message sent!</h3>
+                <p className="text-sm md:text-base text-slate-600 dark:text-slate-400">
                   Thanks for reaching out. We'll get back to you as soon as possible.
                 </p>
-                <button 
+                <button
                   onClick={() => setStatus('idle')}
-                  className="mt-6 text-blue-600 dark:text-blue-400 font-bold hover:underline"
+                  className="mt-4 md:mt-6 text-blue-600 dark:text-blue-400 font-bold hover:underline"
                 >
                   Send another message
                 </button>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                  <div className="space-y-2">
+              <form onSubmit={handleSubmit} className="space-y-3 md:space-y-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-6">
+                  <div className="space-y-1 md:space-y-2">
                     <label htmlFor="name" className="block text-sm font-medium text-slate-700 dark:text-slate-300">
                       Full Name
                     </label>
@@ -89,11 +89,11 @@ export const ContactForm: React.FC = () => {
                       id="name"
                       name="name"
                       required
-                      className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
+                      className="w-full px-4 py-2.5 md:py-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
                       placeholder="John Doe"
                     />
                   </div>
-                  <div className="space-y-2">
+                  <div className="space-y-1 md:space-y-2">
                     <label htmlFor="email" className="block text-sm font-medium text-slate-700 dark:text-slate-300">
                       Email
                     </label>
@@ -102,13 +102,13 @@ export const ContactForm: React.FC = () => {
                       id="email"
                       name="email"
                       required
-                      className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
+                      className="w-full px-4 py-2.5 md:py-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
                       placeholder="john@example.com"
                     />
                   </div>
                 </div>
 
-                <div className="space-y-2">
+                <div className="hidden sm:block space-y-1 md:space-y-2">
                   <label htmlFor="subject" className="block text-sm font-medium text-slate-700 dark:text-slate-300">
                     Subject
                   </label>
@@ -116,22 +116,21 @@ export const ContactForm: React.FC = () => {
                     type="text"
                     id="subject"
                     name="subject"
-                    required
-                    className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
+                    className="w-full px-4 py-2.5 md:py-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
                     placeholder="How can we help you?"
                   />
                 </div>
 
-                <div className="space-y-2">
+                <div className="space-y-1 md:space-y-2">
                   <label htmlFor="message" className="block text-sm font-medium text-slate-700 dark:text-slate-300">
                     Message
                   </label>
                   <textarea
                     id="message"
                     name="message"
-                    rows={4}
+                    rows={3}
                     required
-                    className="w-full px-4 py-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all resize-none"
+                    className="w-full px-4 py-2.5 md:py-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all resize-none"
                     placeholder="Tell us about your project..."
                   ></textarea>
                 </div>
@@ -139,7 +138,7 @@ export const ContactForm: React.FC = () => {
                 <button
                   type="submit"
                   disabled={status === 'submitting'}
-                  className="w-full inline-flex justify-center items-center gap-3 px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs uppercase tracking-widest rounded-full shadow-lg shadow-blue-500/25 transition-all duration-200 disabled:opacity-70 disabled:cursor-not-allowed"
+                  className="w-full inline-flex justify-center items-center gap-3 px-8 py-3 md:py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs uppercase tracking-widest rounded-full shadow-lg shadow-blue-500/25 transition-all duration-200 disabled:opacity-70 disabled:cursor-not-allowed"
                 >
                   {status === 'submitting' ? (
                     <>
@@ -153,8 +152,8 @@ export const ContactForm: React.FC = () => {
                     </>
                   )}
                 </button>
-                
-                <p className="text-xs text-center text-slate-500 dark:text-slate-400 mt-4">
+
+                <p className="hidden md:block text-xs text-center text-slate-500 dark:text-slate-400 mt-4">
                   By submitting this form you agree to our <a href="/privacy" className="underline hover:text-slate-900 dark:hover:text-slate-300 transition-colors">Privacy Policy</a>.
                 </p>
               </form>

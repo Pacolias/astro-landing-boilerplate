@@ -25,70 +25,80 @@ export const Location: React.FC = () => {
   };
 
   return (
-    <section id="location" className="py-24 bg-slate-100 dark:bg-slate-950 transition-colors border-b border-slate-200 dark:border-slate-800">
+    <section id="location" className="min-h-[calc(100svh-4rem)] flex flex-col justify-center py-10 md:min-h-0 md:block md:py-24 bg-slate-100 dark:bg-slate-950 transition-colors border-b border-slate-200 dark:border-slate-800">
       {/* Invisible Schema injection for search engines */}
-      <script 
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
       />
-      
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
-          
-          <div className="space-y-8">
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-center">
+
+          <div className="space-y-4 md:space-y-8">
             <div>
-              <h2 className="text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight sm:text-4xl mb-4">
+              <h2 className="text-xl font-extrabold text-slate-900 dark:text-white tracking-tight sm:text-3xl md:text-4xl mb-1 md:mb-4">
                 We are in the heart of Miami
               </h2>
-              <p className="text-lg text-slate-600 dark:text-slate-400">
+              <p className="text-sm md:text-lg text-slate-600 dark:text-slate-400">
                 Come visit us or contact us to schedule a meeting. We are ready to boost your next project.
               </p>
             </div>
 
-            <div className="space-y-6">
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400 shrink-0">
-                  <Lucide.MapPin className="w-5 h-5" />
+            <div className="space-y-3 md:space-y-6">
+              <div className="flex items-start gap-3 md:gap-4">
+                <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400 shrink-0">
+                  <Lucide.MapPin className="w-4 h-4 md:w-5 md:h-5" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-slate-900 dark:text-white">Address</h3>
-                  <p className="text-slate-600 dark:text-slate-400 mt-1">{SITE_CONFIG.address}</p>
-                  <p className="text-slate-500 dark:text-slate-500 text-sm mt-1">33101 Miami, FL, United States</p>
+                  <h3 className="text-sm md:text-base font-bold text-slate-900 dark:text-white">Address</h3>
+                  <p className="text-sm md:text-base text-slate-600 dark:text-slate-400 mt-0.5 md:mt-1">{SITE_CONFIG.address}</p>
+                  <p className="hidden md:block text-slate-500 dark:text-slate-500 text-sm mt-1">33101 Miami, FL, United States</p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400 shrink-0">
-                  <Lucide.Clock className="w-5 h-5" />
+              <div className="flex items-start gap-3 md:gap-4">
+                <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400 shrink-0">
+                  <Lucide.Clock className="w-4 h-4 md:w-5 md:h-5" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-slate-900 dark:text-white">Business Hours</h3>
-                  <p className="text-slate-600 dark:text-slate-400 mt-1">Monday - Friday: 09:00 AM - 06:00 PM</p>
-                  <p className="text-slate-500 dark:text-slate-500 text-sm mt-1">Saturday and Sunday: Closed</p>
+                  <h3 className="text-sm md:text-base font-bold text-slate-900 dark:text-white">Business Hours</h3>
+                  <p className="text-sm md:text-base text-slate-600 dark:text-slate-400 mt-0.5 md:mt-1">Mon - Fri: 09:00 AM - 06:00 PM</p>
+                  <p className="hidden md:block text-slate-500 dark:text-slate-500 text-sm mt-1">Saturday and Sunday: Closed</p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400 shrink-0">
-                  <Lucide.Phone className="w-5 h-5" />
+              <div className="flex items-start gap-3 md:gap-4">
+                <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center text-blue-600 dark:text-blue-400 shrink-0">
+                  <Lucide.Phone className="w-4 h-4 md:w-5 md:h-5" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-slate-900 dark:text-white">Contact</h3>
-                  <p className="text-slate-600 dark:text-slate-400 mt-1">{SITE_CONFIG.contactPhone}</p>
-                  <p className="text-slate-600 dark:text-slate-400">{SITE_CONFIG.contactEmail}</p>
+                  <h3 className="text-sm md:text-base font-bold text-slate-900 dark:text-white">Contact</h3>
+                  <p className="text-sm md:text-base text-slate-600 dark:text-slate-400 mt-0.5 md:mt-1">{SITE_CONFIG.contactPhone}</p>
+                  <p className="hidden md:block text-slate-600 dark:text-slate-400">{SITE_CONFIG.contactEmail}</p>
                 </div>
               </div>
             </div>
+
+            <a
+              href="https://maps.google.com/maps?q=Miami,%20FL,%20USA"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="md:hidden inline-flex items-center gap-2 text-sm font-bold text-blue-600 dark:text-blue-400"
+            >
+              <Lucide.Map className="w-4 h-4" />
+              Open in Google Maps
+            </a>
           </div>
 
-          <div className="w-full h-full min-h-[400px] rounded-3xl overflow-hidden shadow-xl shadow-slate-900/5 dark:shadow-none border border-slate-200/80 dark:border-slate-800 relative bg-slate-200 dark:bg-slate-800">
-            <iframe 
-              src="https://maps.google.com/maps?q=Miami,%20FL,%20USA&t=&z=12&ie=UTF8&iwloc=&output=embed" 
-              width="100%" 
-              height="100%" 
-              style={{ border: 0, position: 'absolute', inset: 0 }} 
-              allowFullScreen={false} 
-              loading="lazy" 
+          <div className="hidden md:block w-full h-full min-h-[400px] rounded-3xl overflow-hidden shadow-xl shadow-slate-900/5 dark:shadow-none border border-slate-200/80 dark:border-slate-800 relative bg-slate-200 dark:bg-slate-800">
+            <iframe
+              src="https://maps.google.com/maps?q=Miami,%20FL,%20USA&t=&z=12&ie=UTF8&iwloc=&output=embed"
+              width="100%"
+              height="100%"
+              style={{ border: 0, position: 'absolute', inset: 0 }}
+              allowFullScreen={false}
+              loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               title="Google Maps Miami Location"
             ></iframe>
