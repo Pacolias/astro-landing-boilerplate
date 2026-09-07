@@ -28,8 +28,27 @@ export const FAQ: React.FC = () => {
     }
   ];
 
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer
+      }
+    }))
+  };
+
   return (
     <section id="faq" className="py-14 md:py-20 bg-white dark:bg-slate-900 border-b border-slate-100 dark:border-slate-800 transition-colors">
+      {/* Structured Q&A data for search engines and LLM agents */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           title="Frequently Asked Questions"
@@ -40,14 +59,17 @@ export const FAQ: React.FC = () => {
         <div className="mt-6 md:mt-12 space-y-3 md:space-y-4">
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
+            const panelId = `faq-answer-${index}`;
 
             return (
               <div
                 key={index}
                 className="bg-slate-100 dark:bg-slate-950 p-4 md:p-6 rounded-xl shadow-sm border border-slate-200/80 dark:border-slate-800 transition-colors"
               >
-                <button 
+                <button
                   onClick={() => toggleFAQ(index)}
+                  aria-expanded={isOpen}
+                  aria-controls={panelId}
                   className="w-full flex justify-between items-center text-sm md:text-base font-semibold cursor-pointer text-slate-900 dark:text-white text-left focus:outline-none"
                 >
                   <span className="pr-4">{faq.question}</span>
@@ -57,6 +79,8 @@ export const FAQ: React.FC = () => {
                 </button>
 
                 <div
+                  id={panelId}
+                  role="region"
                   className={`overflow-hidden transition-all duration-300 ease-in-out ${
                     isOpen ? 'max-h-96 opacity-100 mt-3 md:mt-4' : 'max-h-0 opacity-0 mt-0'
                   }`}

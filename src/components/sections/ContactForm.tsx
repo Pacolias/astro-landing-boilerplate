@@ -60,7 +60,10 @@ export const ContactForm: React.FC = () => {
           </div>
 
           {/* Right Form */}
-          <div className="bg-white dark:bg-slate-900 p-5 md:p-10 rounded-2xl md:rounded-3xl border border-slate-200/80 dark:border-slate-800 shadow-xl shadow-slate-900/5 dark:shadow-none">
+          <div
+            className="bg-white dark:bg-slate-900 p-5 md:p-10 rounded-2xl md:rounded-3xl border border-slate-200/80 dark:border-slate-800 shadow-xl shadow-slate-900/5 dark:shadow-none"
+            aria-live="polite"
+          >
             {status === 'success' ? (
               <div className="flex flex-col items-center justify-center text-center h-full py-6 md:py-12 space-y-2 md:space-y-4 animate-in fade-in zoom-in duration-500">
                 <div className="w-12 h-12 md:w-16 md:h-16 bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 rounded-full flex items-center justify-center mb-2">

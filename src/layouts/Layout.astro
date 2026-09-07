@@ -9,12 +9,19 @@ import { WhatsAppButton } from '../components/ui/WhatsAppButton';
 interface Props {
   title?: string;
   description?: string;
+  noindex?: boolean;
 }
 
-const { 
-  title = SITE_CONFIG.siteName, 
-  description = SITE_CONFIG.siteDescription 
+const {
+  title = SITE_CONFIG.siteName,
+  description = SITE_CONFIG.siteDescription,
+  noindex = false
 } = Astro.props;
+
+const BASE_URL = import.meta.env.BASE_URL;
+const SAFE_BASE = BASE_URL.endsWith('/') ? BASE_URL : `${BASE_URL}/`;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImageURL = new URL(`${SAFE_BASE}logo.svg`, Astro.site);
 ---
 
 <!DOCTYPE html>
@@ -24,8 +31,40 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
     <meta name="author" content={SITE_CONFIG.clientName} />
-    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+    <meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow'} />
+    <meta name="theme-color" content={SITE_CONFIG.theme.primary} />
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="icon" type="image/svg+xml" href={`${SAFE_BASE}logo.svg`} />
+    <link rel="shortcut icon" href={`${SAFE_BASE}favicon.ico`} />
+    <link rel="preconnect" href="https://images.unsplash.com" crossorigin />
+
+    <!-- Open Graph / Twitter Card -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={SITE_CONFIG.siteName} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
+
+    <!-- Site-wide structured data so search engines and LLM agents can identify the site -->
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'WebSite',
+        name: SITE_CONFIG.siteName,
+        description: SITE_CONFIG.siteDescription,
+        url: Astro.site?.toString()
+      })}
+    />
+
     <title>{title}</title>
+    <slot name="head" />
     <ClientRouter />
     <script is:inline>
       const applyTheme = () => {
@@ -54,9 +93,16 @@ const {
     </script>
   </head>
   <body class="min-h-screen flex flex-col overflow-x-hidden bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans antialiased selection:bg-blue-200">
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:rounded-full focus:bg-blue-600 focus:text-white focus:font-bold focus:text-sm focus:shadow-lg"
+    >
+      Skip to main content
+    </a>
+
     <Navbar client:load transition:persist="navbar" />
-    
-    <main class="flex-grow">
+
+    <main id="main-content" class="flex-grow">
       <slot />
     </main>
     

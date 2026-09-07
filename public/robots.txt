@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pacolias.github.io/astro-landing-boilerplate/sitemap-index.xml
