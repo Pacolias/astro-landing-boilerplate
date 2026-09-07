@@ -159,7 +159,7 @@ export const BookingCalendar: React.FC = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-7 gap-x-1 sm:gap-x-3 text-center text-xs font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-4">
+        <div className="relative z-0 grid grid-cols-7 gap-x-1 sm:gap-x-3 text-center text-xs font-bold uppercase tracking-widest text-slate-400 dark:text-slate-500 mb-6">
           <span>M</span>
           <span>T</span>
           <span>W</span>
@@ -169,7 +169,7 @@ export const BookingCalendar: React.FC = () => {
           <span>S</span>
         </div>
 
-        <div className="relative" aria-live="polite" aria-busy={monthLoading}>
+        <div className="relative z-10 pt-1" aria-live="polite" aria-busy={monthLoading}>
           {/* Skeleton shown while "loading" the new month */}
           <div
             className={`grid grid-cols-7 gap-x-1 gap-y-1 sm:gap-x-3 sm:gap-y-3 transition-opacity duration-200 ${
@@ -213,12 +213,12 @@ export const BookingCalendar: React.FC = () => {
                   onClick={() => handleSelectDate(day)}
                   aria-pressed={isSelected}
                   aria-label={`${dayLabel}${hasAvailability ? ', available' : ', no availability'}${isSelected ? ', selected' : ''}`}
-                  className={`relative mx-auto w-full max-w-11 aspect-square rounded-xl sm:rounded-2xl flex items-center justify-center text-xs sm:text-sm transition-all duration-300 focus:outline-none ${
+                  className={`relative mx-auto w-full max-w-11 aspect-square rounded-xl sm:rounded-2xl flex items-center justify-center text-xs sm:text-sm border ring-4 transition-all duration-300 focus:outline-none ${
                     isSelected
-                      ? 'bg-blue-600 text-white font-bold shadow-lg shadow-blue-500/30 scale-105 ring-4 ring-blue-600/20 z-10'
+                      ? 'bg-blue-600 border-blue-600 text-white font-bold shadow-lg shadow-blue-500/30 scale-105 ring-blue-600/20 z-10'
                       : hasAvailability
-                      ? 'text-slate-900 dark:text-white bg-slate-100 dark:bg-slate-800/40 hover:bg-slate-200 dark:hover:bg-slate-800 hover:scale-105 active:scale-95 border border-slate-200/80 dark:border-slate-700/50'
-                      : 'text-slate-300 dark:text-slate-600 hover:bg-slate-100 dark:hover:bg-slate-800/20'
+                      ? 'text-slate-900 dark:text-white bg-slate-100 dark:bg-slate-800/40 hover:bg-slate-200 dark:hover:bg-slate-800 hover:scale-105 active:scale-95 border-slate-200/80 dark:border-slate-700/50 ring-transparent'
+                      : 'text-slate-300 dark:text-slate-600 hover:bg-slate-100 dark:hover:bg-slate-800/20 border-transparent ring-transparent'
                   }`}
                 >
                   {day}
