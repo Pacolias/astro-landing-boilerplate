@@ -62,7 +62,7 @@ export const Pricing: React.FC = () => {
           centered={true}
         />
 
-        <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 -mx-4 sm:-mx-6 px-4 sm:px-6 pb-1 mt-6 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] md:grid md:grid-cols-3 md:gap-8 md:mt-16 md:mx-0 md:px-0 md:pb-0 md:overflow-visible md:snap-none md:items-stretch">
+        <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 -mx-4 sm:-mx-6 px-4 sm:px-6 pt-4 pb-1 mt-2 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] md:grid md:grid-cols-3 md:gap-8 md:mt-16 md:pt-0 md:mx-0 md:px-0 md:pb-0 md:overflow-visible md:snap-none md:items-stretch">
           {plans.map((plan, index) => (
             <div
               key={index}
